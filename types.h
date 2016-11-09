@@ -16,6 +16,7 @@ typedef struct {
 
 void init_array(array_t *a, uint32_t initial_size);
 void insert_array(array_t *a, uint32_t element);
+uint32_t get_array_value(array_t * a, uint32_t idx);
 void free_array(array_t *a);
 void print_array(array_t *a);
 
@@ -34,6 +35,8 @@ typedef struct {
 
 void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num);
 void eval_layer(layer_t * l);
+void backprop_layer_1(layer_t * l, layer_t * other);
+void backprop_layer_2(layer_t * l, uint32_t val);
 void free_layer(layer_t * l);
 
 #endif // TYPES_H_

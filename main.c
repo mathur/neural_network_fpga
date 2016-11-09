@@ -4,9 +4,11 @@
 array_t 	target_vals;
 array_t 	attr_vals;
 
+// layers
 layer_t		layer_1;
 layer_t		layer_2;
 
+uint32_t 	temp			= 0;
 uint32_t 	curr_point 		= 0;
 uint32_t 	total_runs 		= 0;
 uint32_t	num_incorrect 	= 0;
@@ -71,10 +73,32 @@ int main() {
 	srand48(time(NULL));
 
 	init_layer(&layer_1, &attr_vals, curr_point, 6, 1);
-	// THIS SHOULD BE layer_1->layer_out
+	// TODO SHOULD BE layer_1->layer_out instead of attr_vals for the second layer
 	init_layer(&layer_2, &attr_vals, curr_point, 1, 2);
 
 	while(total_runs < NUM_TRAINING_ITERATIONS) {
+		// set up the first layer and evaluate it
+		layer_1.curr_point = curr_point;
+		eval_layer(&layer_1);
+
+		// set up the second layer and evaluate it
+		// TODO SHOULD BE layer_1->layer_out instead of attr_vals for the second layer
+		layer_2.curr_point = curr_point;
+		eval_layer(&layer_2);
+
+		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
+		backprop_layer_1(&layer_1, &layer_2);
+
+		if(layer_2.layer_out[0] >= 0.5) {
+			temp = 1;
+		} else {
+			temp = 0;
+		}
+
+		if(temp != get_array_value(&target_vals, curr_point)) {
+			num_incorrect++;
+		}
+
 		total_runs++;
 		curr_point++;
 		if(curr_point >= target_vals.used) {

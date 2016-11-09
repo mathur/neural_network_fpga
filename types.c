@@ -1,13 +1,13 @@
 #include "types.h"
 
 // dynamically sized array
-void init_array(array_t *a, uint32_t initial_size) {
+void init_array(array_t * a, uint32_t initial_size) {
     a->array = (uint32_t *) malloc(initial_size * sizeof(uint32_t));
     a->used = 0;
     a->size = initial_size;
 }
 
-void insert_array(array_t *a, uint32_t element) {
+void insert_array(array_t * a, uint32_t element) {
     if (a->used == a->size) {
         a->size *= 2;
         a->array = (uint32_t *) realloc(a->array, a->size * sizeof(uint32_t));
@@ -16,13 +16,21 @@ void insert_array(array_t *a, uint32_t element) {
     a->array[a->used++] = element;
 }
 
+uint32_t get_array_value(array_t * a, uint32_t idx) {
+    if(idx >= a->used) {
+        return -1;
+    } else {
+        return a->array[idx];
+    }
+}
+
 void free_array(array_t *a) {
     free(a->array);
     a->array = NULL;
     a->used = a->size = 0;
 }
 
-void print_array(array_t *a) {
+void print_array(array_t * a) {
     printf("Size of array is %d\n", a->used);
     for(int i = 0; i < a->used; i++) {
         printf("%d ", a->array[i]);
@@ -54,6 +62,16 @@ void eval_layer(layer_t * l) {
         l->layer_net[i] = 0;
         l->layer_out[i] = 0;
     }
+}
+
+void backprop_layer_1(layer_t * l, layer_t * other) {
+    // TODO implement this
+    return;
+}
+
+void backprop_layer_2(layer_t * l, uint32_t val) {
+    // TODO implement this
+    return;
 }
 
 void free_layer(layer_t * l) {

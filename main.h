@@ -1,0 +1,12 @@
+#ifndef MAIN_H_
+#define MAIN_H_
+
+#define _GNU_SOURCE
+
+#define INITIAL_ARR_SIZE			100
+
+#define	LEARNING_RATE				0.2
+#define	NUM_TRAINING_ITERATIONS		50000
+#define	CONVERGENCE_THRESHOLD		0.000001
+
+#endif // MAIN_H_

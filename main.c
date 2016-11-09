@@ -6,10 +6,26 @@
 #include "main.h"
 #include "types.h"
 
-array_t target_vals;
-array_t attr_vals;
+// each row has 1 target + 100 attributes
+array_t 	target_vals;
+array_t 	attr_vals;
+
+uint32_t 	curr_point 		= 0;
+uint32_t 	total_runs 		= 0;
+uint32_t	num_incorrect 	= 0;
+uint32_t 	prev_sample_err = 0;
+uint32_t	curr_sample_err = 0;
 
 int parse_data(char * fname) {
+	// reset dataset
+	curr_point 		= 0;
+	total_runs 		= 0;
+	num_incorrect 	= 0;
+	prev_sample_err = 0;
+	curr_sample_err = 0;
+	init_array(&target_vals, INITIAL_ARR_SIZE);
+	init_array(&attr_vals, INITIAL_ARR_SIZE);
+
 	FILE * fp;
 	char * line = NULL;
 	size_t len = 0;
@@ -41,25 +57,24 @@ int parse_data(char * fname) {
 
 	fclose(fp);
 
-	if (line)
+	if (line) {
 	    free(line);
+	}
 
 	return 0;
 }
 
 int main() {
 	printf("Initializing neural network...\n");
-	init_array(&target_vals, INITIAL_ARR_SIZE);
-	init_array(&attr_vals, INITIAL_ARR_SIZE);
 
 	printf("Parsing training dataset...\n");
-	if(-1 == parse_data("mushroom-training.txt")) {
-		exit(EXIT_FAILURE);
+	if(parse_data("mushroom-training.txt") == -1) {
+		return -1;
 	}
 
 	printf("Cleaning up...\n");
 	free_array(&target_vals);
 	free_array(&attr_vals);
 
-    return 0;
+	return 0;
 }

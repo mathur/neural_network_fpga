@@ -71,7 +71,8 @@ int main() {
 	srand48(time(NULL));
 
 	init_layer(&layer_1, &attr_vals, curr_point, 6, 1);
-	//init_layer(&layer_2, layer_1->layer_out, 1, 2);
+	// THIS SHOULD BE layer_1->layer_out
+	init_layer(&layer_2, &attr_vals, curr_point, 1, 2);
 
 	while(total_runs < NUM_TRAINING_ITERATIONS) {
 		total_runs++;
@@ -84,6 +85,8 @@ int main() {
 	printf("Cleaning up...\n");
 	free_array(&target_vals);
 	free_array(&attr_vals);
+	free_layer(&layer_1);
+	free_layer(&layer_2);
 
 	return 0;
 }

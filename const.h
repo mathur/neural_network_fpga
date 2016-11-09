@@ -1,0 +1,12 @@
+#ifndef CONST_H_
+#define CONST_H_
+
+#define INITIAL_ARR_SIZE			100
+
+#define ATTRS_PER_ENTRY				100
+
+#define	NUM_TRAINING_ITERATIONS		50000
+#define	LEARNING_RATE				0.2
+#define	CONVERGENCE_THRESHOLD		0.000001
+
+#endif // CONST_H_

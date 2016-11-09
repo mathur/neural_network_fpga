@@ -1,12 +1,15 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+#include "const.h"
+#include "types.h"
+
 #define _GNU_SOURCE
-
-#define INITIAL_ARR_SIZE			100
-
-#define	LEARNING_RATE				0.2
-#define	NUM_TRAINING_ITERATIONS		50000
-#define	CONVERGENCE_THRESHOLD		0.000001
 
 #endif // MAIN_H_

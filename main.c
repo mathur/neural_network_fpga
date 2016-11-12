@@ -1,8 +1,8 @@
 #include "main.h"
 
 // each row has 1 target + 100 attributes
-array_t 	target_vals;
-array_t 	attr_vals;
+int_array_t target_vals;
+int_array_t attr_vals;
 
 // layers
 layer_t		layer_1;
@@ -17,8 +17,8 @@ uint32_t	curr_sample_err = 0;
 
 int parse_data(char * fname) {
 	// reset dataset
-	init_array(&target_vals, INITIAL_ARR_SIZE);
-	init_array(&attr_vals, INITIAL_ARR_SIZE);
+	init_int_array(&target_vals, INITIAL_ARR_SIZE);
+	init_int_array(&attr_vals, INITIAL_ARR_SIZE);
 	curr_point 		= 0;
 	total_runs 		= 0;
 	num_incorrect 	= 0;
@@ -46,10 +46,10 @@ int parse_data(char * fname) {
 		char *token;
 		while ((token = strsep(&line, ","))) {
 			if(first_elem) {
-				insert_array(&target_vals, atoi(token));
+				insert_int_array(&target_vals, atoi(token));
 				first_elem = 0;
 			} else {
-				insert_array(&attr_vals, atoi(token));
+				insert_int_array(&attr_vals, atoi(token));
 			}
 		}
 	}
@@ -86,7 +86,7 @@ int main() {
 		layer_2.curr_point = curr_point;
 		eval_layer(&layer_2);
 
-		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
+		backprop_layer_2(&layer_2, get_int_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
 
 		// round up or down
@@ -97,7 +97,7 @@ int main() {
 		}
 
 		// check for validity of input
-		if(temp != get_array_value(&target_vals, curr_point)) {
+		if(temp != get_int_array_value(&target_vals, curr_point)) {
 			num_incorrect++;
 		}
 
@@ -113,8 +113,8 @@ int main() {
 	getchar();
 
 	printf("Cleaning up...\n");
-	free_array(&target_vals);
-	free_array(&attr_vals);
+	free_int_array(&target_vals);
+	free_int_array(&attr_vals);
 	free_layer(&layer_1);
 	free_layer(&layer_2);
 

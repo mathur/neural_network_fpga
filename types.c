@@ -1,13 +1,13 @@
 #include "types.h"
 
 // dynamically sized array
-void init_array(array_t * a, uint32_t initial_size) {
+void init_int_array(int_array_t * a, uint32_t initial_size) {
     a->array = (uint32_t *) malloc(initial_size * sizeof(uint32_t));
     a->used = 0;
     a->size = initial_size;
 }
 
-void insert_array(array_t * a, uint32_t element) {
+void insert_int_array(int_array_t * a, uint32_t element) {
     if (a->used == a->size) {
         a->size *= 2;
         a->array = (uint32_t *) realloc(a->array, a->size * sizeof(uint32_t));
@@ -16,7 +16,7 @@ void insert_array(array_t * a, uint32_t element) {
     a->array[a->used++] = element;
 }
 
-uint32_t get_array_value(array_t * a, uint32_t idx) {
+uint32_t get_int_array_value(int_array_t * a, uint32_t idx) {
     if(idx >= a->used) {
         return -1;
     } else {
@@ -24,13 +24,14 @@ uint32_t get_array_value(array_t * a, uint32_t idx) {
     }
 }
 
-void free_array(array_t *a) {
+void free_int_array(int_array_t *a) {
     free(a->array);
     a->array = NULL;
-    a->used = a->size = 0;
+    a->used = 0;
+    a->size = 0;
 }
 
-void print_array(array_t * a) {
+void print_int_array(int_array_t * a) {
     printf("Size of array is %d\n", a->used);
     for(int i = 0; i < a->used; i++) {
         printf("%d ", a->array[i]);
@@ -38,8 +39,47 @@ void print_array(array_t * a) {
     printf("\n");
 }
 
+// dynamically sized array
+void init_float_array(float_array_t * a, uint32_t initial_size) {
+    a->array = (float *) malloc(initial_size * sizeof(float));
+    a->used = 0;
+    a->size = initial_size;
+}
+
+void insert_float_array(float_array_t * a, float element) {
+    if (a->used == a->size) {
+        a->size *= 2;
+        a->array = (float *) realloc(a->array, a->size * sizeof(float));
+    }
+
+    a->array[a->used++] = element;
+}
+
+float get_float_array_value(float_array_t * a, uint32_t idx) {
+    if(idx >= a->used) {
+        return -1;
+    } else {
+        return a->array[idx];
+    }
+}
+
+void free_float_array(float_array_t *a) {
+    free(a->array);
+    a->array = NULL;
+    a->used = 0;
+    a->size = 0;
+}
+
+void print_float_array(float_array_t * a) {
+    printf("Size of array is %d\n", a->used);
+    for(int i = 0; i < a->used; i++) {
+        printf("%f ", a->array[i]);
+    }
+    printf("\n");
+}
+
 // layers
-void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
+void init_layer(layer_t * l, int_array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
@@ -70,7 +110,7 @@ void backprop_layer_2(layer_t * l, uint32_t val) {
 }
 
 void free_layer(layer_t * l) {
-    free_array(l->input_vals);
+    free_int_array(l->input_vals);
 
     l->curr_point = 0;
     l->num_nodes = 0;

@@ -55,13 +55,8 @@ void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t
 }
 
 void eval_layer(layer_t * l) {
-    for(int i = 0; i < l->num_nodes; i++) {
-        // needs to be fixed to:
-        // self.layer_net[x] = numpy.dot(self.input_vals, numpy.transpose(self.weight[x])) + self.bias
-        // self.layer_out[x] = sig(self.layer_net[x])
-        l->layer_net[i] = 0;
-        l->layer_out[i] = 0;
-    }
+    // TODO implement this
+    return;
 }
 
 void backprop_layer_1(layer_t * l, layer_t * other) {

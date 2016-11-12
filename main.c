@@ -89,22 +89,28 @@ int main() {
 		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
 
+		// round up or down
 		if(layer_2.layer_out[0] >= 0.5) {
 			temp = 1;
 		} else {
 			temp = 0;
 		}
 
+		// check for validity of input
 		if(temp != get_array_value(&target_vals, curr_point)) {
 			num_incorrect++;
 		}
 
+		// move onto the next data entry
 		total_runs++;
 		curr_point++;
 		if(curr_point >= target_vals.used) {
 			curr_point = 0;
 		}
 	}
+
+	printf("Done training! Press any key to begin testing the neural network.\n");
+	getchar();
 
 	printf("Cleaning up...\n");
 	free_array(&target_vals);

@@ -1,4 +1,4 @@
-#include "formulas.h"
+#include "formula.h"
 
 float sigmoid(uint32_t x) {
 	if(!ON_FPGA) {

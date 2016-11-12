@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #include "const.h"
+#include "formula.h"
 
 // dynamically sized array
 typedef struct {

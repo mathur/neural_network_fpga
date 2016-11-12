@@ -55,7 +55,11 @@ void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint
 }
 
 void eval_layer_1(layer_1_t * l) {
-    // TODO implement this
+    for(int i = 0; i < l->num_nodes; i++) {
+        l->layer_net[i] = 0;
+        l->layer_out[i] = sigmoid(l->layer_net[i]);
+    }
+
     return;
 }
 
@@ -102,7 +106,11 @@ void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32
 }
 
 void eval_layer_2(layer_2_t * l) {
-    // TODO implement this
+    for(int i = 0; i < l->num_nodes; i++) {
+        l->layer_net[i] = 0;
+        l->layer_out[i] = sigmoid(l->layer_net[i]);
+    }
+
     return;
 }
 

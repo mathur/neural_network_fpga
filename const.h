@@ -1,8 +1,9 @@
 #ifndef CONST_H_
 #define CONST_H_
 
-#define INITIAL_ARR_SIZE			100
+#define ON_FPGA						0
 
+#define INITIAL_ARR_SIZE			100
 #define ATTRS_PER_ENTRY				100
 
 #define	NUM_TRAINING_ITERATIONS		50000

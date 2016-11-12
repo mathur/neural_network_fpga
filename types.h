@@ -22,6 +22,23 @@ void print_array(array_t *a);
 
 // neural network layers
 typedef struct {
+	float	*	input_vals;
+	uint32_t	curr_point;
+	uint32_t	num_nodes;
+	uint32_t	layer_num;
+	float *		weights;
+	float *		weight_deltas;
+	float *		layer_net;
+	float *		layer_out;
+	float		bias;
+} layer_2_t;
+
+void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num);
+void eval_layer_2(layer_2_t * l);
+void backprop_layer_2(layer_2_t * l, float other);
+void free_layer_2(layer_2_t * l);
+
+typedef struct {
 	array_t	*	input_vals;
 	uint32_t	curr_point;
 	uint32_t	num_nodes;
@@ -31,12 +48,11 @@ typedef struct {
 	float *		layer_net;
 	float *		layer_out;
 	float		bias;
-} layer_t;
+} layer_1_t;
 
-void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num);
-void eval_layer(layer_t * l);
-void backprop_layer_1(layer_t * l, layer_t * other);
-void backprop_layer_2(layer_t * l, uint32_t val);
-void free_layer(layer_t * l);
+void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num);
+void eval_layer_1(layer_1_t * l);
+void backprop_layer_1(layer_1_t * l, layer_2_t * other);
+void free_layer_1(layer_1_t * l);
 
 #endif // TYPES_H_

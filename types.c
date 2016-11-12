@@ -39,7 +39,7 @@ void print_array(array_t * a) {
 }
 
 // layers
-void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
+void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
@@ -54,23 +54,65 @@ void init_layer(layer_t * l, array_t * input_vals, uint32_t curr_point, uint32_t
     l->bias = (drand48() * 2) - 1;
 }
 
-void eval_layer(layer_t * l) {
+void eval_layer_1(layer_1_t * l) {
     // TODO implement this
     return;
 }
 
-void backprop_layer_1(layer_t * l, layer_t * other) {
+void backprop_layer_1(layer_1_t * l, layer_2_t * other) {
     // TODO implement this
     return;
 }
 
-void backprop_layer_2(layer_t * l, uint32_t val) {
-    // TODO implement this
-    return;
-}
-
-void free_layer(layer_t * l) {
+void free_layer_1(layer_1_t * l) {
     free_array(l->input_vals);
+
+    l->curr_point = 0;
+    l->num_nodes = 0;
+    l->layer_num = 0;
+
+    free(l->weights);
+    l->weights = NULL;
+
+    free(l->weight_deltas);
+    l->weight_deltas = NULL;
+
+    free(l->layer_net);
+    l->layer_net = NULL;
+
+    free(l->layer_out);
+    l->layer_out = NULL;
+
+    l->bias = 0;
+}
+
+void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
+    l->input_vals = input_vals;
+    l->curr_point = curr_point;
+    l->num_nodes = num_nodes;
+    l->layer_num = layer_num;
+    l->weights = (float *) malloc(ATTRS_PER_ENTRY * num_nodes * sizeof(float));
+    for(int i = 0; i < (ATTRS_PER_ENTRY * num_nodes); i++) {
+        l->weights[i] = drand48();
+    }
+    l->weight_deltas = (float *) calloc(ATTRS_PER_ENTRY * num_nodes, sizeof(float));
+    l->layer_net = (float *) calloc(num_nodes, sizeof(float));
+    l->layer_out = (float *) calloc(num_nodes, sizeof(float));
+    l->bias = (drand48() * 2) - 1;
+}
+
+void eval_layer_2(layer_2_t * l) {
+    // TODO implement this
+    return;
+}
+
+void backprop_layer_2(layer_2_t * l, float other) {
+    // TODO implement this
+    return;
+}
+
+void free_layer_2(layer_2_t * l) {
+    l->input_vals = NULL;
 
     l->curr_point = 0;
     l->num_nodes = 0;

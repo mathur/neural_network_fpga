@@ -5,8 +5,8 @@ array_t 	target_vals;
 array_t 	attr_vals;
 
 // layers
-layer_t		layer_1;
-layer_t		layer_2;
+layer_1_t	layer_1;
+layer_2_t	layer_2;
 
 uint32_t 	temp			= 0;
 uint32_t 	curr_point 		= 0;
@@ -72,19 +72,17 @@ int main() {
 	printf("Initializing neural network...\n");
 	srand48(time(NULL));
 
-	init_layer(&layer_1, &attr_vals, curr_point, 6, 1);
-	// TODO SHOULD BE layer_1->layer_out instead of attr_vals for the second layer
-	init_layer(&layer_2, &attr_vals, curr_point, 1, 2);
+	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
+	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
 
 	while(total_runs < NUM_TRAINING_ITERATIONS) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
-		eval_layer(&layer_1);
+		eval_layer_1(&layer_1);
 
 		// set up the second layer and evaluate it
-		// TODO SHOULD BE layer_1->layer_out instead of attr_vals for the second layer
 		layer_2.curr_point = curr_point;
-		eval_layer(&layer_2);
+		eval_layer_2(&layer_2);
 
 		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
@@ -115,8 +113,8 @@ int main() {
 	printf("Cleaning up...\n");
 	free_array(&target_vals);
 	free_array(&attr_vals);
-	free_layer(&layer_1);
-	free_layer(&layer_2);
+	free_layer_1(&layer_1);
+	free_layer_2(&layer_2);
 
 	return 0;
 }

@@ -106,16 +106,13 @@ int main() {
 			prev_sample_err = curr_sample_err;
 			curr_sample_err = curr_err;
 			if(fabs(prev_sample_err - curr_sample_err) < CONVERGENCE_THRESHOLD) {
-				printf("Current: %f\n", layer_2.layer_out[0]);
-				printf("Target: %d\n", get_array_value(&target_vals, curr_point));
-				printf("Error calculated: %f\n", curr_err);
-				printf("ABS Error calculated: %f\n", fabs(prev_sample_err - curr_sample_err));
 				printf("Data has converged at the %dth run\n", total_runs);
-				printf("Number incorrect: %d\n", num_incorrect);
 				break;
 			}
 		}
-		printf("ERROR: %f\n", curr_err);
+
+		printf("Current iteration: %d\n", total_runs);
+		printf("Current error: %f\n\n", curr_err);
 
 		// move onto the next data entry
 		total_runs++;
@@ -129,10 +126,10 @@ int main() {
 	getchar();
 
 	printf("Cleaning up...\n");
-	free_array(&target_vals);
-	free_array(&attr_vals);
 	free_layer_1(&layer_1);
 	free_layer_2(&layer_2);
+	free_array(&target_vals);
+	free_array(&attr_vals);
 
 	return 0;
 }

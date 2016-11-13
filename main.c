@@ -8,12 +8,11 @@ array_t 	attr_vals;
 layer_1_t	layer_1;
 layer_2_t	layer_2;
 
-uint32_t 	temp			= 0;
-uint32_t 	curr_point 		= 0;
-uint32_t 	total_runs 		= 0;
-uint32_t	num_incorrect 	= 0;
-uint32_t 	prev_sample_err = 0;
-uint32_t	curr_sample_err = 0;
+uint32_t 	curr_point;
+uint32_t 	total_runs;
+uint32_t	num_incorrect;
+float		prev_sample_err;
+float		curr_sample_err;
 
 int parse_data(char * fname) {
 	// reset dataset
@@ -88,7 +87,10 @@ int main() {
 		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
 
+		float curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
+
 		// round up or down
+		uint32_t temp;
 		if(layer_2.layer_out[0] >= 0.5) {
 			temp = 1;
 		} else {
@@ -99,6 +101,21 @@ int main() {
 		if(temp != get_array_value(&target_vals, curr_point)) {
 			num_incorrect++;
 		}
+
+		if(total_runs % 100 == 0) {
+			prev_sample_err = curr_sample_err;
+			curr_sample_err = curr_err;
+			if(fabs(prev_sample_err - curr_sample_err) < CONVERGENCE_THRESHOLD) {
+				printf("Current: %f\n", layer_2.layer_out[0]);
+				printf("Target: %d\n", get_array_value(&target_vals, curr_point));
+				printf("Error calculated: %f\n", curr_err);
+				printf("ABS Error calculated: %f\n", fabs(prev_sample_err - curr_sample_err));
+				printf("Data has converged at the %dth run\n", total_runs);
+				printf("Number incorrect: %d\n", num_incorrect);
+				break;
+			}
+		}
+		printf("ERROR: %f\n", curr_err);
 
 		// move onto the next data entry
 		total_runs++;

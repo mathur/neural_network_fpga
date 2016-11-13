@@ -8,9 +8,9 @@ array_t 	attr_vals;
 layer_1_t	layer_1;
 layer_2_t	layer_2;
 
-uint32_t 	curr_point;
+float 		curr_point;
 uint32_t 	total_runs;
-uint32_t	num_incorrect;
+float		num_incorrect;
 float		prev_sample_err;
 float		curr_sample_err;
 
@@ -63,16 +63,19 @@ int parse_data(char * fname) {
 }
 
 int main() {
-	printf("Parsing training dataset...\n");
-	if(parse_data("mushroom-training.txt") == -1) {
-		return -1;
-	}
-
 	printf("Initializing neural network...\n");
 	srand48(time(NULL));
 
+	init_array(&target_vals, INITIAL_ARR_SIZE);
+	init_array(&attr_vals, INITIAL_ARR_SIZE);
 	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
 	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
+
+	printf("Parsing training dataset...\n");
+	if(parse_data("mushroom-training.txt") == -1) {
+		printf("Failed to parse dataset\n");
+		return -1;
+	}
 
 	printf("Starting training...\n");
 	while(total_runs < NUM_TRAINING_ITERATIONS) {
@@ -87,14 +90,10 @@ int main() {
 		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
 
-		float curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
-
 		// round up or down
-		uint32_t temp;
+		float temp = 0;
 		if(layer_2.layer_out[0] >= 0.5) {
 			temp = 1;
-		} else {
-			temp = 0;
 		}
 
 		// check for validity of input
@@ -102,15 +101,13 @@ int main() {
 			num_incorrect++;
 		}
 
-		if(total_runs % 100 == 0) {
-			prev_sample_err = curr_sample_err;
-			curr_sample_err = curr_err;
-			if(fabs(prev_sample_err - curr_sample_err) < CONVERGENCE_THRESHOLD) {
+		float curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
+		if(total_runs % ITER_TO_CHECK == 0) {
+			if(curr_err < CONVERGENCE_THRESHOLD) {
 				printf("Data has converged at the %dth run\n", total_runs);
 				break;
 			}
 		}
-
 		printf("Current iteration: %d\n", total_runs);
 		printf("Current error: %f\n\n", curr_err);
 
@@ -124,6 +121,8 @@ int main() {
 
 	printf("Done training! Press ENTER to begin testing the neural network.\n");
 	getchar();
+
+	// test here
 
 	printf("Cleaning up...\n");
 	free_layer_1(&layer_1);

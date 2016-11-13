@@ -5,6 +5,7 @@
 
 #define INITIAL_ARR_SIZE			100
 #define ATTRS_PER_ENTRY				100
+#define ITER_TO_CHECK				100
 
 #define	NUM_TRAINING_ITERATIONS		50000
 #define	LEARNING_RATE				0.2

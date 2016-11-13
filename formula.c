@@ -1,6 +1,6 @@
 #include "formula.h"
 
-float sigmoid(uint32_t x) {
+float sigmoid(float x) {
 	if(!ON_FPGA) {
 		return 1.0 / (1.0 + exp(-x));
 	} else {
@@ -10,7 +10,7 @@ float sigmoid(uint32_t x) {
 	return 0.0;
 }
 
-float inv_sigmoid(uint32_t x) {
+float inv_sigmoid(float x) {
 	if(!ON_FPGA) {
 		return sigmoid(x) * (1 - sigmoid(x));
 	} else {
@@ -41,7 +41,7 @@ float inv_err(float o, float t) {
 	return 0.0;
 }
 
-float dot_product(float * arr1, float * arr2, uint32_t size) {
+float dot_product(float * arr1, float * arr2, float size) {
 	float total_sum = 0;
 	for(int i = 0; i < size; i++) {
 		total_sum += (arr1[i] * arr2[i]);

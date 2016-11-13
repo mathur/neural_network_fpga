@@ -1,22 +1,22 @@
 #include "types.h"
 
 // dynamically sized array
-void init_array(array_t * a, uint32_t initial_size) {
-    a->array = (uint32_t *) malloc(initial_size * sizeof(uint32_t));
+void init_array(array_t * a, float initial_size) {
+    a->array = (float *) malloc(initial_size * sizeof(float));
     a->used = 0;
     a->size = initial_size;
 }
 
-void insert_array(array_t * a, uint32_t element) {
+void insert_array(array_t * a, float element) {
     if (a->used == a->size) {
         a->size *= 2;
-        a->array = (uint32_t *) realloc(a->array, a->size * sizeof(uint32_t));
+        a->array = (float *) realloc(a->array, a->size * sizeof(float));
     }
 
     a->array[a->used++] = element;
 }
 
-uint32_t get_array_value(array_t * a, uint32_t idx) {
+float get_array_value(array_t * a, uint32_t idx) {
     if(idx >= a->used) {
         return -1;
     } else {
@@ -33,13 +33,19 @@ void free_array(array_t *a) {
 void print_array(array_t * a) {
     printf("Size of array is %d\n", a->used);
     for(int i = 0; i < a->used; i++) {
-        printf("%d ", a->array[i]);
+        printf("%f ", a->array[i]);
     }
     printf("\n");
 }
 
+void print_float_array(float * arr, uint32_t size) {
+    for(int i = 0; i < size; i++) {
+        printf("%f ", arr[i]);
+    }
+}
+
 // layers
-void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
+void init_layer_1(layer_1_t * l, array_t * input_vals, float curr_point, float num_nodes, float layer_num) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
@@ -117,7 +123,7 @@ void free_layer_1(layer_1_t * l) {
     l->bias = 0;
 }
 
-void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32_t num_nodes, uint32_t layer_num) {
+void init_layer_2(layer_2_t * l, float * input_vals, float curr_point, float num_nodes, float layer_num) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
@@ -146,7 +152,7 @@ void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32
 void eval_layer_2(layer_2_t * l) {
     float * input_vals = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
     for(int i = 0; i < ATTRS_PER_ENTRY; i++) {
-        input_vals[i] = l->input_vals[(l->curr_point * ATTRS_PER_ENTRY) + i];
+        input_vals[i] = l->input_vals[((uint32_t) l->curr_point * ATTRS_PER_ENTRY) + i];
     }
 
     // now calculate the dot product of input_vals and l->weights[i]

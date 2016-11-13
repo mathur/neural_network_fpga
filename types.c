@@ -44,11 +44,22 @@ void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
     l->layer_num = layer_num;
-    l->weights = (float *) malloc(ATTRS_PER_ENTRY * num_nodes * sizeof(float));
-    for(int i = 0; i < (ATTRS_PER_ENTRY * num_nodes); i++) {
-        l->weights[i] = drand48();
+
+    l->weights = (float **) malloc(num_nodes * sizeof(float *));
+    for(int i = 0; i < num_nodes; i++) {
+        l->weights[i] = (float *) malloc(ATTRS_PER_ENTRY * sizeof(float));
     }
-    l->weight_deltas = (float *) calloc(ATTRS_PER_ENTRY * num_nodes, sizeof(float));
+    for(int i = 0; i < num_nodes; i++) {
+        for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
+            l->weights[i][j] = drand48();
+        }
+    }
+
+    l->weight_deltas = (float **) calloc(num_nodes, sizeof(float *));
+    for(int i = 0; i < num_nodes; i++) {
+        l->weight_deltas[i] = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+    }
+
     l->layer_net = (float *) calloc(num_nodes, sizeof(float));
     l->layer_out = (float *) calloc(num_nodes, sizeof(float));
     l->bias = (drand48() * 2) - 1;
@@ -56,7 +67,7 @@ void init_layer_1(layer_1_t * l, array_t * input_vals, uint32_t curr_point, uint
 
 void eval_layer_1(layer_1_t * l) {
     for(int i = 0; i < l->num_nodes; i++) {
-        l->layer_net[i] = 0;
+        l->layer_net[i] = 0 + l->bias;
         l->layer_out[i] = sigmoid(l->layer_net[i]);
     }
 
@@ -64,20 +75,26 @@ void eval_layer_1(layer_1_t * l) {
 }
 
 void backprop_layer_1(layer_1_t * l, layer_2_t * other) {
-    // TODO implement this
+    for(int i = 0; i < l->num_nodes; i++) {
+        for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
+            l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * other->weight_deltas[0][i] * get_array_value(l->input_vals, j) * other->weights[0][i] * inv_sigmoid(l->layer_out[i]));
+        }
+    }
     return;
 }
 
 void free_layer_1(layer_1_t * l) {
     free_array(l->input_vals);
 
-    l->curr_point = 0;
-    l->num_nodes = 0;
-    l->layer_num = 0;
-
+    for(int i = 0; i < l->num_nodes; i++) {
+        free(l->weights[i]);
+    }
     free(l->weights);
     l->weights = NULL;
 
+    for(int i = 0; i < l->num_nodes; i++) {
+        free(l->weight_deltas[i]);
+    }
     free(l->weight_deltas);
     l->weight_deltas = NULL;
 
@@ -87,6 +104,9 @@ void free_layer_1(layer_1_t * l) {
     free(l->layer_out);
     l->layer_out = NULL;
 
+    l->curr_point = 0;
+    l->num_nodes = 0;
+    l->layer_num = 0;
     l->bias = 0;
 }
 
@@ -95,11 +115,22 @@ void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
     l->layer_num = layer_num;
-    l->weights = (float *) malloc(ATTRS_PER_ENTRY * num_nodes * sizeof(float));
-    for(int i = 0; i < (ATTRS_PER_ENTRY * num_nodes); i++) {
-        l->weights[i] = drand48();
+
+    l->weights = (float **) malloc(num_nodes * sizeof(float *));
+    for(int i = 0; i < num_nodes; i++) {
+        l->weights[i] = (float *) malloc(ATTRS_PER_ENTRY * sizeof(float));
     }
-    l->weight_deltas = (float *) calloc(ATTRS_PER_ENTRY * num_nodes, sizeof(float));
+    for(int i = 0; i < num_nodes; i++) {
+        for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
+            l->weights[i][j] = drand48();
+        }
+    }
+
+    l->weight_deltas = (float **) calloc(num_nodes, sizeof(float *));
+    for(int i = 0; i < num_nodes; i++) {
+        l->weight_deltas[i] = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+    }
+
     l->layer_net = (float *) calloc(num_nodes, sizeof(float));
     l->layer_out = (float *) calloc(num_nodes, sizeof(float));
     l->bias = (drand48() * 2) - 1;
@@ -107,7 +138,7 @@ void init_layer_2(layer_2_t * l, float * input_vals, uint32_t curr_point, uint32
 
 void eval_layer_2(layer_2_t * l) {
     for(int i = 0; i < l->num_nodes; i++) {
-        l->layer_net[i] = 0;
+        l->layer_net[i] = 0 + l->bias;
         l->layer_out[i] = sigmoid(l->layer_net[i]);
     }
 
@@ -115,20 +146,27 @@ void eval_layer_2(layer_2_t * l) {
 }
 
 void backprop_layer_2(layer_2_t * l, float other) {
-    // TODO implement this
+    for(int i = 0; i < l->num_nodes; i++) {
+        for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
+            l->weight_deltas[i][j] = inv_sigmoid(l->layer_out[i]) * inv_err(l->layer_out[i], other);
+            l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * l->weight_deltas[i][j] * l->input_vals[j]);
+        }
+    }
     return;
 }
 
 void free_layer_2(layer_2_t * l) {
     l->input_vals = NULL;
 
-    l->curr_point = 0;
-    l->num_nodes = 0;
-    l->layer_num = 0;
-
+    for(int i = 0; i < l->num_nodes; i++) {
+        free(l->weights[i]);
+    }
     free(l->weights);
     l->weights = NULL;
 
+    for(int i = 0; i < l->num_nodes; i++) {
+        free(l->weight_deltas[i]);
+    }
     free(l->weight_deltas);
     l->weight_deltas = NULL;
 
@@ -138,5 +176,8 @@ void free_layer_2(layer_2_t * l) {
     free(l->layer_out);
     l->layer_out = NULL;
 
+    l->curr_point = 0;
+    l->num_nodes = 0;
+    l->layer_num = 0;
     l->bias = 0;
 }

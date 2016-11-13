@@ -75,6 +75,7 @@ int main() {
 	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
 	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
 
+	printf("Starting training...\n");
 	while(total_runs < NUM_TRAINING_ITERATIONS) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
@@ -107,7 +108,7 @@ int main() {
 		}
 	}
 
-	printf("Done training! Press any key to begin testing the neural network.\n");
+	printf("Done training! Press ENTER to begin testing the neural network.\n");
 	getchar();
 
 	printf("Cleaning up...\n");

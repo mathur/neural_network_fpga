@@ -1,48 +1,43 @@
 #include "formula.h"
 
-float sigmoid(float x) {
+double sigmoid(double x) {
 	if(!ON_FPGA) {
 		return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet
+		return 0.0;
 	}
-
-	return 0.0;
 }
 
-float inv_sigmoid(float x) {
+double inv_sigmoid(double x) {
 	if(!ON_FPGA) {
 		return sigmoid(x) * (1 - sigmoid(x));
 	} else {
 		// nothing yet
+		return 0.0;
 	}
-
-	return 0.0;
 }
 
-float err(float o, float t) {
+double err(double o, double t) {
 	if(!ON_FPGA) {
-		float mid_result = t - o;
-		return 0.5 * (mid_result * mid_result);
+		return 0.5 * ((t - o) * (t - o));
 	} else {
 		// nothing yet
+		return 0.0;
 	}
-
-	return 0.0;
 }
 
-float inv_err(float o, float t) {
+double inv_err(double o, double t) {
 	if(!ON_FPGA) {
 		return (o - t);
 	} else {
 		// nothing yet
+		return 0.0;
 	}
-
-	return 0.0;
 }
 
-float dot_product(float * arr1, float * arr2, float size) {
-	float total_sum = 0;
+double dot_product(double * arr1, double * arr2, double size) {
+	double total_sum = 0;
 	for(int i = 0; i < size; i++) {
 		total_sum += (arr1[i] * arr2[i]);
 	}

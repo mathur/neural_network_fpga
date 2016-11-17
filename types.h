@@ -10,48 +10,48 @@
 
 // dynamically sized array
 typedef struct {
- 	float * 	array;
+ 	double * 	array;
  	uint32_t 	used;
- 	float 		size;
+ 	double 		size;
 } array_t;
 
-void init_array(array_t * a, float initial_size);
-void insert_array(array_t * a, float element);
-float get_array_value(array_t * a, uint32_t idx);
+void init_array(array_t * a, double initial_size);
+void insert_array(array_t * a, double element);
+double get_array_value(array_t * a, uint32_t idx);
 void free_array(array_t * a);
 void print_array(array_t * a);
 
 // neural network layers
 typedef struct {
-	float *		input_vals;
-	float	curr_point;
-	float	num_nodes;
-	float	layer_num;
-	float **	weights;
-	float **	weight_deltas;
-	float *		layer_net;
-	float *		layer_out;
-	float		bias;
+	double *		input_vals;
+	double	curr_point;
+	double	num_nodes;
+	double	layer_num;
+	double **	weights;
+	double **	weight_deltas;
+	double *		layer_net;
+	double *		layer_out;
+	double		bias;
 } layer_2_t;
 
-void init_layer_2(layer_2_t * l, float * input_vals, float curr_point, float num_nodes, float layer_num);
+void init_layer_2(layer_2_t * l, double ** input_vals, double curr_point, double num_nodes, double layer_num);
 void eval_layer_2(layer_2_t * l);
-void backprop_layer_2(layer_2_t * l, float other);
+void backprop_layer_2(layer_2_t * l, double other);
 void free_layer_2(layer_2_t * l);
 
 typedef struct {
 	array_t	*	input_vals;
-	float	curr_point;
-	float	num_nodes;
-	float	layer_num;
-	float **	weights;
-	float **	weight_deltas;
-	float *		layer_net;
-	float *		layer_out;
-	float		bias;
+	double	curr_point;
+	double	num_nodes;
+	double	layer_num;
+	double **	weights;
+	double **	weight_deltas;
+	double *		layer_net;
+	double *		layer_out;
+	double		bias;
 } layer_1_t;
 
-void init_layer_1(layer_1_t * l, array_t * input_vals, float curr_point, float num_nodes, float layer_num);
+void init_layer_1(layer_1_t * l, array_t * input_vals, double curr_point, double num_nodes, double layer_num);
 void eval_layer_1(layer_1_t * l);
 void backprop_layer_1(layer_1_t * l, layer_2_t * other);
 void free_layer_1(layer_1_t * l);

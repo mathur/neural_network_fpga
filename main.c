@@ -8,11 +8,11 @@ array_t 	attr_vals;
 layer_1_t	layer_1;
 layer_2_t	layer_2;
 
-float 		curr_point;
+uint32_t	curr_point;
 uint32_t 	total_runs;
-float		num_incorrect;
-float		prev_sample_err;
-float		curr_sample_err;
+uint32_t	num_incorrect;
+double		prev_sample_err;
+double		curr_sample_err;
 
 int parse_data(char * fname) {
 	// reset dataset
@@ -69,7 +69,7 @@ int main() {
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
 	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
-	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
+	init_layer_2(&layer_2, &layer_1.layer_out, curr_point, 1, 2);
 
 	printf("Parsing training dataset...\n");
 	if(parse_data("mushroom-training.txt") == -1) {
@@ -91,7 +91,7 @@ int main() {
 		backprop_layer_1(&layer_1, &layer_2);
 
 		// round up or down
-		float temp = 0;
+		double temp = 0;
 		if(layer_2.layer_out[0] >= 0.5) {
 			temp = 1;
 		}
@@ -101,13 +101,13 @@ int main() {
 			num_incorrect++;
 		}
 
-		float curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
-		if(total_runs % ITER_TO_CHECK == 0) {
-			if(curr_err < CONVERGENCE_THRESHOLD) {
-				printf("Data has converged at the %dth run\n", total_runs);
-				break;
-			}
-		}
+		double curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
+		// if(total_runs % ITER_TO_CHECK == 0) {
+		// 	if(curr_err < CONVERGENCE_THRESHOLD) {
+		// 		printf("Data has converged at the %dth run\n", total_runs);
+		// 		break;
+		// 	}
+		// }
 		printf("Current iteration: %d\n", total_runs);
 		printf("Current error: %f\n\n", curr_err);
 

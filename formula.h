@@ -8,10 +8,10 @@
 
 #include "const.h"
 
-float sigmoid(float x);
-float inv_sigmoid(float x);
-float err(float o, float t);
-float inv_err(float o, float t);
-float dot_product(float * arr1, float * arr2, float size);
+double sigmoid(double x);
+double inv_sigmoid(double x);
+double err(double o, double t);
+double inv_err(double o, double t);
+double dot_product(double * arr1, double * arr2, double size);
 
 #endif // FORMULA_H_

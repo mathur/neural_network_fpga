@@ -1,22 +1,22 @@
 #include "types.h"
 
 // dynamically sized array
-void init_array(array_t * a, float initial_size) {
-    a->array = (float *) malloc(initial_size * sizeof(float));
+void init_array(array_t * a, double initial_size) {
+    a->array = (double *) malloc(initial_size * sizeof(double));
     a->used = 0;
     a->size = initial_size;
 }
 
-void insert_array(array_t * a, float element) {
+void insert_array(array_t * a, double element) {
     if (a->used == a->size) {
         a->size *= 2;
-        a->array = (float *) realloc(a->array, a->size * sizeof(float));
+        a->array = (double *) realloc(a->array, a->size * sizeof(double));
     }
 
     a->array[a->used++] = element;
 }
 
-float get_array_value(array_t * a, uint32_t idx) {
+double get_array_value(array_t * a, uint32_t idx) {
     if(idx >= a->used) {
         return -1;
     } else {
@@ -33,27 +33,27 @@ void free_array(array_t *a) {
 void print_array(array_t * a) {
     printf("Size of array is %d\n", a->used);
     for(int i = 0; i < a->used; i++) {
-        printf("%f ", a->array[i]);
+        printf("%d ", (uint32_t) a->array[i]);
     }
     printf("\n");
 }
 
-void print_float_array(float * arr, uint32_t size) {
+void print_double_array(double * arr, uint32_t size) {
     for(int i = 0; i < size; i++) {
         printf("%f ", arr[i]);
     }
 }
 
 // layers
-void init_layer_1(layer_1_t * l, array_t * input_vals, float curr_point, float num_nodes, float layer_num) {
+void init_layer_1(layer_1_t * l, array_t * input_vals, double curr_point, double num_nodes, double layer_num) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
     l->layer_num = layer_num;
 
-    l->weights = (float **) malloc(num_nodes * sizeof(float *));
+    l->weights = (double **) malloc(num_nodes * sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weights[i] = (float *) malloc(ATTRS_PER_ENTRY * sizeof(float));
+        l->weights[i] = (double *) malloc(ATTRS_PER_ENTRY * sizeof(double));
     }
     for(int i = 0; i < num_nodes; i++) {
         for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
@@ -61,18 +61,18 @@ void init_layer_1(layer_1_t * l, array_t * input_vals, float curr_point, float n
         }
     }
 
-    l->weight_deltas = (float **) calloc(num_nodes, sizeof(float *));
+    l->weight_deltas = (double **) calloc(num_nodes, sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weight_deltas[i] = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+        l->weight_deltas[i] = (double *) calloc(ATTRS_PER_ENTRY, sizeof(double));
     }
 
-    l->layer_net = (float *) calloc(num_nodes, sizeof(float));
-    l->layer_out = (float *) calloc(num_nodes, sizeof(float));
+    l->layer_net = (double *) calloc(num_nodes, sizeof(double));
+    l->layer_out = (double *) calloc(num_nodes, sizeof(double));
     l->bias = (drand48() * 2) - 1;
 }
 
 void eval_layer_1(layer_1_t * l) {
-    float * input_vals = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+    double * input_vals = (double *) calloc(ATTRS_PER_ENTRY, sizeof(double));
     for(int i = 0; i < ATTRS_PER_ENTRY; i++) {
         input_vals[i] = get_array_value(l->input_vals, (l->curr_point * ATTRS_PER_ENTRY) + i);
     }
@@ -123,15 +123,15 @@ void free_layer_1(layer_1_t * l) {
     l->bias = 0;
 }
 
-void init_layer_2(layer_2_t * l, float * input_vals, float curr_point, float num_nodes, float layer_num) {
-    l->input_vals = input_vals;
+void init_layer_2(layer_2_t * l, double ** input_vals, double curr_point, double num_nodes, double layer_num) {
+    l->input_vals = *input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
     l->layer_num = layer_num;
 
-    l->weights = (float **) malloc(num_nodes * sizeof(float *));
+    l->weights = (double **) malloc(num_nodes * sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weights[i] = (float *) malloc(ATTRS_PER_ENTRY * sizeof(float));
+        l->weights[i] = (double *) malloc(ATTRS_PER_ENTRY * sizeof(double));
     }
     for(int i = 0; i < num_nodes; i++) {
         for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
@@ -139,18 +139,18 @@ void init_layer_2(layer_2_t * l, float * input_vals, float curr_point, float num
         }
     }
 
-    l->weight_deltas = (float **) calloc(num_nodes, sizeof(float *));
+    l->weight_deltas = (double **) calloc(num_nodes, sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weight_deltas[i] = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+        l->weight_deltas[i] = (double *) calloc(ATTRS_PER_ENTRY, sizeof(double));
     }
 
-    l->layer_net = (float *) calloc(num_nodes, sizeof(float));
-    l->layer_out = (float *) calloc(num_nodes, sizeof(float));
+    l->layer_net = (double *) calloc(num_nodes, sizeof(double));
+    l->layer_out = (double *) calloc(num_nodes, sizeof(double));
     l->bias = (drand48() * 2) - 1;
 }
 
 void eval_layer_2(layer_2_t * l) {
-    float * input_vals = (float *) calloc(ATTRS_PER_ENTRY, sizeof(float));
+    double * input_vals = (double *) calloc(ATTRS_PER_ENTRY, sizeof(double));
     for(int i = 0; i < ATTRS_PER_ENTRY; i++) {
         input_vals[i] = l->input_vals[((uint32_t) l->curr_point * ATTRS_PER_ENTRY) + i];
     }
@@ -165,7 +165,7 @@ void eval_layer_2(layer_2_t * l) {
     return;
 }
 
-void backprop_layer_2(layer_2_t * l, float other) {
+void backprop_layer_2(layer_2_t * l, double other) {
     for(int i = 0; i < l->num_nodes; i++) {
         for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
             l->weight_deltas[i][j] = inv_sigmoid(l->layer_out[i]) * inv_err(l->layer_out[i], other);

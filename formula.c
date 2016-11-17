@@ -2,10 +2,6 @@
 
 double sigmoid(double x) {
 	if(!ON_FPGA) {
-		if(1.0 / (1.0 + exp(-x)) != 1.0 / (1.0 + exp(-x))) {
-			printf("SIGMOID IS NAN");
-			exit(-1);
-		}
 		return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet

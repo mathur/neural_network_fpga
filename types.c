@@ -47,14 +47,7 @@ void print_double_array(double * arr, uint32_t size) {
 double dot_product_1(array_t * arr1, double * arr2, double size, uint32_t curr_point) {
     double total_sum = 0;
     for(int i = 0; i < size; i++) {
-        total_sum += (get_array_value(arr1, i) * arr2[i]);
-    }
-
-    if(total_sum != total_sum) {
-        printf("total_sum: %f\n", total_sum);
-        for(int i = 0; i < size; i++) {
-            printf("%f %f \n", get_array_value(arr1, (curr_point * ATTRS_PER_ENTRY) + i), arr2[i]);
-        }
+        total_sum += (get_array_value(arr1, size * curr_point + i) * arr2[i]);
     }
 
     return total_sum;
@@ -64,13 +57,6 @@ double dot_product_2(double * arr1, double * arr2, double size) {
     double total_sum = 0;
     for(int i = 0; i < size; i++) {
         total_sum += (arr1[i] * arr2[i]);
-    }
-
-    if(total_sum != total_sum) {
-        printf("total_sum: %f\n", total_sum);
-        for(int i = 0; i < size; i++) {
-            printf("%f %f \n", arr1[i], arr2[i]);
-        }
     }
 
     return total_sum;
@@ -117,7 +103,7 @@ void eval_layer_1(layer_1_t * l) {
 void backprop_layer_1(layer_1_t * l, layer_2_t * other) {
     for(int i = 0; i < l->num_nodes; i++) {
         for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
-            l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * other->weight_deltas[0][i] * get_array_value(l->input_vals, j) * other->weights[0][i] * inv_sigmoid(l->layer_out[i]));
+            l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * other->weight_deltas[0][i] * get_array_value(l->input_vals, (l->curr_point * ATTRS_PER_ENTRY + j)) * other->weights[0][i] * inv_sigmoid(l->layer_out[i]));
         }
     }
     return;
@@ -150,25 +136,26 @@ void free_layer_1(layer_1_t * l) {
     l->bias = 0;
 }
 
-void init_layer_2(layer_2_t * l, double * input_vals, double curr_point, double num_nodes, double layer_num) {
+void init_layer_2(layer_2_t * l, double * input_vals, double curr_point, double num_nodes, double layer_num, double input_num_nodes) {
     l->input_vals = input_vals;
     l->curr_point = curr_point;
     l->num_nodes = num_nodes;
     l->layer_num = layer_num;
+    l->input_num_nodes = input_num_nodes;
 
     l->weights = (double **) malloc(num_nodes * sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weights[i] = (double *) malloc(num_nodes * sizeof(double));
+        l->weights[i] = (double *) malloc(input_num_nodes * sizeof(double));
     }
     for(int i = 0; i < num_nodes; i++) {
-        for(int j = 0; j < num_nodes; j++) {
+        for(int j = 0; j < input_num_nodes; j++) {
             l->weights[i][j] = drand48();
         }
     }
 
     l->weight_deltas = (double **) calloc(num_nodes, sizeof(double *));
     for(int i = 0; i < num_nodes; i++) {
-        l->weight_deltas[i] = (double *) calloc(num_nodes, sizeof(double));
+        l->weight_deltas[i] = (double *) calloc(input_num_nodes, sizeof(double));
     }
 
     l->layer_net = (double *) calloc(num_nodes, sizeof(double));
@@ -180,10 +167,7 @@ void eval_layer_2(layer_2_t * l) {
     // now calculate the dot product of input_vals and l->weights[i]
     // at each iteration
     for(int i = 0; i < l->num_nodes; i++) {
-        l->layer_net[i] = dot_product_2(l->input_vals, l->weights[i], l->num_nodes) + l->bias;
-        if(l->layer_net[i] != l->layer_net[i]) {
-            printf("LAYER 2 is dead\n");
-        }
+        l->layer_net[i] = dot_product_2(l->input_vals, l->weights[i], l->input_num_nodes) + l->bias;
         l->layer_out[i] = sigmoid(l->layer_net[i]);
     }
 
@@ -192,7 +176,7 @@ void eval_layer_2(layer_2_t * l) {
 
 void backprop_layer_2(layer_2_t * l, double other) {
     for(int i = 0; i < l->num_nodes; i++) {
-        for(int j = 0; j < l->num_nodes; j++) {
+        for(int j = 0; j < l->input_num_nodes; j++) {
             l->weight_deltas[i][j] = inv_sigmoid(l->layer_out[i]) * inv_err(l->layer_out[i], other);
             l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * l->weight_deltas[i][j] * l->input_vals[j]);
         }

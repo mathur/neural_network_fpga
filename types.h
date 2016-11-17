@@ -30,6 +30,7 @@ typedef struct {
 	double		curr_point;
 	double		num_nodes;
 	double		layer_num;
+	double		input_num_nodes;
 	double **	weights;
 	double **	weight_deltas;
 	double *	layer_net;
@@ -37,7 +38,7 @@ typedef struct {
 	double		bias;
 } layer_2_t;
 
-void init_layer_2(layer_2_t * l, double * input_vals, double curr_point, double num_nodes, double layer_num);
+void init_layer_2(layer_2_t * l, double * input_vals, double curr_point, double num_nodes, double layer_num, double input_num_nodes);
 void eval_layer_2(layer_2_t * l);
 void backprop_layer_2(layer_2_t * l, double other);
 void free_layer_2(layer_2_t * l);

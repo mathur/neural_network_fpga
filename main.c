@@ -68,8 +68,9 @@ int main() {
 
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
-	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
-	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
+
+	init_layer_1(&layer_1, &attr_vals, curr_point, LAYER_1_NUM_NODES, 1);
+	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2, LAYER_1_NUM_NODES);
 
 	printf("Parsing training dataset...\n");
 	if(parse_data("mushroom-training.txt") == -1) {
@@ -78,7 +79,7 @@ int main() {
 	}
 
 	printf("Starting training...\n");
-	while(total_runs < NUM_TRAINING_ITERATIONS) {
+	while(1) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
 		eval_layer_1(&layer_1);

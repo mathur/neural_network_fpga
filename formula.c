@@ -2,6 +2,10 @@
 
 double sigmoid(double x) {
 	if(!ON_FPGA) {
+		if(1.0 / (1.0 + exp(-x)) != 1.0 / (1.0 + exp(-x))) {
+			printf("SIGMOID IS NAN");
+			exit(-1);
+		}
 		return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet
@@ -34,12 +38,4 @@ double inv_err(double o, double t) {
 		// nothing yet
 		return 0.0;
 	}
-}
-
-double dot_product(double * arr1, double * arr2, double size) {
-	double total_sum = 0;
-	for(int i = 0; i < size; i++) {
-		total_sum += (arr1[i] * arr2[i]);
-	}
-	return total_sum;
 }

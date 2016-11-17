@@ -69,7 +69,7 @@ int main() {
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
 	init_layer_1(&layer_1, &attr_vals, curr_point, 6, 1);
-	init_layer_2(&layer_2, &layer_1.layer_out, curr_point, 1, 2);
+	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2);
 
 	printf("Parsing training dataset...\n");
 	if(parse_data("mushroom-training.txt") == -1) {
@@ -102,12 +102,12 @@ int main() {
 		}
 
 		double curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
-		// if(total_runs % ITER_TO_CHECK == 0) {
-		// 	if(curr_err < CONVERGENCE_THRESHOLD) {
-		// 		printf("Data has converged at the %dth run\n", total_runs);
-		// 		break;
-		// 	}
-		// }
+		if(total_runs % ITER_TO_CHECK == 0) {
+			if(curr_err < CONVERGENCE_THRESHOLD) {
+				printf("Data has converged at the %dth run\n", total_runs);
+				break;
+			}
+		}
 		printf("Current iteration: %d\n", total_runs);
 		printf("Current error: %f\n\n", curr_err);
 

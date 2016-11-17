@@ -12,6 +12,5 @@ double sigmoid(double x);
 double inv_sigmoid(double x);
 double err(double o, double t);
 double inv_err(double o, double t);
-double dot_product(double * arr1, double * arr2, double size);
 
 #endif // FORMULA_H_

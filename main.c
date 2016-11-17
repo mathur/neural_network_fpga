@@ -91,17 +91,6 @@ int main() {
 		backprop_layer_2(&layer_2, get_array_value(&target_vals, curr_point));
 		backprop_layer_1(&layer_1, &layer_2);
 
-		// round up or down
-		double temp = 0;
-		if(layer_2.layer_out[0] >= 0.5) {
-			temp = 1;
-		}
-
-		// check for validity of input
-		if(temp != get_array_value(&target_vals, curr_point)) {
-			num_incorrect++;
-		}
-
 		double curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
 		if(total_runs % ITER_TO_CHECK == 0) {
 			if(curr_err < CONVERGENCE_THRESHOLD) {
@@ -123,9 +112,45 @@ int main() {
 	printf("Done training! Press ENTER to begin testing the neural network.\n");
 	getchar();
 
-	// test here
+	// clean up arrays from training
+	free_array(&target_vals);
+	free_array(&attr_vals);
+	printf("Parsing training dataset...\n");
+	if(parse_data("mushroom-testing.txt") == -1) {
+		printf("Failed to parse dataset\n");
+		return -1;
+	}
 
-	printf("Cleaning up...\n");
+	// test here
+	printf("Starting testing...\n");
+	while(curr_point < target_vals.used) {
+		// set up the first layer and evaluate it
+		layer_1.curr_point = curr_point;
+		eval_layer_1(&layer_1);
+
+		// set up the second layer and evaluate it
+		layer_2.curr_point = curr_point;
+		eval_layer_2(&layer_2);
+
+		// round up or down
+		double temp = 0;
+		if(layer_2.layer_out[0] >= 0.5) {
+			temp = 1;
+		}
+
+		// check for validity of input
+		if(temp != get_array_value(&target_vals, curr_point)) {
+			num_incorrect++;
+		}
+
+		// move onto the next data entry
+		total_runs++;
+		curr_point++;
+	}
+
+	printf("Total incorrectly classified elements from the testing dataset: %d\n", num_incorrect);
+	printf("Accuracy percentage: %0.2f%%\n", (1 - ((double) num_incorrect) / target_vals.used) * 100);
+
 	free_layer_1(&layer_1);
 	free_layer_2(&layer_2);
 	free_array(&target_vals);

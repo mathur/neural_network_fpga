@@ -79,6 +79,7 @@ int main() {
 	}
 
 	printf("Starting training...\n");
+	double total_err = 0;
 	while(1) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
@@ -92,11 +93,13 @@ int main() {
 		backprop_layer_1(&layer_1, &layer_2);
 
 		double curr_err = err(layer_2.layer_out[0], get_array_value(&target_vals, curr_point));
+		total_err += curr_err;
 		if(total_runs % ITER_TO_CHECK == 0) {
-			if(curr_err < CONVERGENCE_THRESHOLD) {
+			if((total_err / ITER_TO_CHECK) < CONVERGENCE_THRESHOLD) {
 				printf("Data has converged at the %dth run\n", total_runs);
 				break;
 			}
+			total_err = 0;
 		}
 		printf("Current iteration: %d\n", total_runs);
 		printf("Current error: %f\n\n", curr_err);
@@ -148,8 +151,9 @@ int main() {
 		curr_point++;
 	}
 
-	printf("Total incorrectly classified elements from the testing dataset: %d\n", num_incorrect);
+	printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
 	printf("Accuracy percentage: %0.2f%%\n", (1 - ((double) num_incorrect) / target_vals.used) * 100);
+	getchar();
 
 	free_layer_1(&layer_1);
 	free_layer_2(&layer_2);

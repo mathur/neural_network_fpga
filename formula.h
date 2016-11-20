@@ -13,4 +13,6 @@ double inv_sigmoid(double x);
 double err(double o, double t);
 double inv_err(double o, double t);
 
+double factorial(double n);
+
 #endif // FORMULA_H_

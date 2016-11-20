@@ -2,6 +2,7 @@
 
 double sigmoid(double x) {
 	if(!ON_FPGA) {
+		// return (atan(x) + 1) / 2;
 		return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet

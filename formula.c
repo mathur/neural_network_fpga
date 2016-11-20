@@ -2,12 +2,7 @@
 
 double sigmoid(double x) {
 	if(!ON_FPGA) {
-		double expr_sum = 0;
-		for(int i = 0; i < 100; i++) {
-			expr_sum += pow(x, i) / factorial(i);
-		}
-
-		return 1.0 / (1.0 + expr_sum);
+		return 1.0 / (1.0 + exp_fast_schraudolph(x));
 		// return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet
@@ -40,6 +35,14 @@ double inv_err(double o, double t) {
 		// nothing yet
 		return 0.0;
 	}
+}
+
+/* Schraudolph's published algorithm */
+double exp_fast_schraudolph(double a) {
+  union { double d; int x[2]; } u;
+  u.x[1] = (int) (1512775 * a + 1072632447);
+  u.x[0] = 0;
+  return u.d;
 }
 
 double factorial(double n) {

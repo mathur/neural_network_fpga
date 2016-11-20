@@ -13,6 +13,8 @@ double inv_sigmoid(double x);
 double err(double o, double t);
 double inv_err(double o, double t);
 
+// attempts at easier sigmoids
+double exp_fast_schraudolph(double a);
 double factorial(double n);
 
 #endif // FORMULA_H_

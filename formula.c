@@ -2,8 +2,7 @@
 
 double sigmoid(double x) {
 	if(!ON_FPGA) {
-		return 1.0 / (1.0 + exp_fast_schraudolph(x));
-		// return 1.0 / (1.0 + exp(-x));
+		return 1.0 / (1.0 + exp(-x));
 	} else {
 		// nothing yet
 		return 0.0;

@@ -11,8 +11,6 @@ layer_2_t	layer_2;
 uint32_t	curr_point;
 uint32_t 	total_runs;
 uint32_t	num_incorrect;
-double		prev_sample_err;
-double		curr_sample_err;
 
 int parse_data(char * fname) {
 	// reset dataset
@@ -21,8 +19,6 @@ int parse_data(char * fname) {
 	curr_point 		= 0;
 	total_runs 		= 0;
 	num_incorrect 	= 0;
-	prev_sample_err = 0;
-	curr_sample_err = 0;
 
 	FILE * fp;
 	char * line = NULL;

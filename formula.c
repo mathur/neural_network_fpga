@@ -1,13 +1,21 @@
 #include "formula.h"
 
 double sigmoid(double x) {
-	if(!ON_FPGA) {
-		// return (atan(x) + 1) / 2;
-		return 1.0 / (1.0 + exp(-x));
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+    if(!ON_FPGA) {
+        // return (atan(x) + 1) / 2;
+        double approx = 1 + x + pow(x,2)/factorial(2)
+                              + pow(x,3)/factorial(3)
+                              + pow(x,4)/factorial(4)
+                              + pow(x,5)/factorial(5)
+                              + pow(x,6)/factorial(6);
+        if (x > 0) {
+            approx = pow(approx, -1);
+        }
+        return 1.0 / (1.0 + approx);
+    } else {
+        // nothing yet
+        return 0.0;
+    }
 }
 
 double inv_sigmoid(double x) {

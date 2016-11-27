@@ -1,0 +1,6 @@
+15:44:13 **** Clean-only build of configuration Nios II for project neural ****
+make clean 
+[neural clean complete]
+
+15:44:13 Build Finished (took 143ms)
+

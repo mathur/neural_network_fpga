@@ -1,0 +1,6 @@
+15:44:05 **** Clean-only build of configuration Nios II for project neural_bsp ****
+make clean 
+[BSP clean complete]
+
+15:44:07 Build Finished (took 2s.53ms)
+

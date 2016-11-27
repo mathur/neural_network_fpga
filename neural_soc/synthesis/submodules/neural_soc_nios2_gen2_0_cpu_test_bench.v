@@ -21,6 +21,7 @@
 module neural_soc_nios2_gen2_0_cpu_test_bench (
                                                 // inputs:
                                                  D_iw,
+                                                 D_iw_custom_n,
                                                  D_iw_op,
                                                  D_iw_opx,
                                                  D_valid,
@@ -55,6 +56,7 @@ module neural_soc_nios2_gen2_0_cpu_test_bench (
   output  [ 31: 0] av_ld_data_aligned_filtered;
   output           test_has_ended;
   input   [ 31: 0] D_iw;
+  input   [  7: 0] D_iw_custom_n;
   input   [  5: 0] D_iw_op;
   input   [  5: 0] D_iw_opx;
   input            D_valid;
@@ -66,7 +68,7 @@ module neural_soc_nios2_gen2_0_cpu_test_bench (
   input   [  4: 0] R_dst_regnum;
   input            R_wr_dst_reg;
   input            W_valid;
-  input   [ 71: 0] W_vinst;
+  input   [303: 0] W_vinst;
   input   [ 31: 0] W_wr_data;
   input   [ 31: 0] av_ld_data_aligned_unfiltered;
   input            clk;
@@ -142,6 +144,8 @@ module neural_soc_nios2_gen2_0_cpu_test_bench (
   wire             D_op_mulxsu;
   wire             D_op_mulxuu;
   wire             D_op_nextpc;
+  wire             D_op_nios_custom_instr_floating_point_2_0;
+  wire             D_op_nios_custom_instr_floating_point_2_0_1;
   wire             D_op_nor;
   wire             D_op_op_rsv02;
   wire             D_op_op_rsv09;
@@ -369,6 +373,8 @@ module neural_soc_nios2_gen2_0_cpu_test_bench (
   assign D_op_intr = (D_iw_opx == 61) & D_is_opx_inst;
   assign D_op_crst = (D_iw_opx == 62) & D_is_opx_inst;
   assign D_op_opx_rsv63 = (D_iw_opx == 63) & D_is_opx_inst;
+  assign D_op_nios_custom_instr_floating_point_2_0 = D_op_custom & ({D_iw_custom_n[7 : 4] , 4'b0} == 8'he0);
+  assign D_op_nios_custom_instr_floating_point_2_0_1 = D_op_custom & ({D_iw_custom_n[7 : 3] , 3'b0} == 8'hf8);
   assign D_is_opx_inst = D_iw_op == 58;
   assign test_has_ended = 1'b0;
 

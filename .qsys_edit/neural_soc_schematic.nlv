@@ -1,0 +1,28 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst neural_soc.nios2_gen2_0.cpu -pg 1
+preplace inst neural_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 360
+preplace inst neural_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 280
+preplace inst neural_soc.nios2_gen2_0.reset_bridge -pg 1
+preplace inst neural_soc.clk_0 -pg 1 -lvl 1 -y 400
+preplace inst neural_soc.switch -pg 1 -lvl 3 -y 640
+preplace inst neural_soc.sdram_pll -pg 1 -lvl 3 -y 40
+preplace inst neural_soc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst neural_soc.sdram -pg 1 -lvl 3 -y 180
+preplace inst neural_soc.nios2_gen2_0 -pg 1 -lvl 2 -y 330
+preplace inst neural_soc.key -pg 1 -lvl 3 -y 440
+preplace inst neural_soc.nios2_gen2_0.clock_bridge -pg 1
+preplace inst neural_soc.led -pg 1 -lvl 3 -y 540
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)neural_soc.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)switch.external_connection,(SLAVE)neural_soc.switch_wire) 1 0 3 NJ 670 NJ 670 NJ
+preplace netloc INTERCONNECT<net_container>neural_soc</net_container>(SLAVE)switch.s1,(SLAVE)key.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)sdram.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)led.s1,(SLAVE)sdram_pll.pll_slave,(MASTER)nios2_gen2_0.data_master,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave) 1 1 2 330 710 690
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)neural_soc.led_wire,(SLAVE)led.external_connection) 1 0 3 NJ 570 NJ 570 NJ
+preplace netloc POINT_TO_POINT<net_container>neural_soc</net_container>(SLAVE)sdram.clk,(MASTER)sdram_pll.c0) 1 2 2 750 30 990
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)key.external_connection,(SLAVE)neural_soc.key_wire) 1 0 3 NJ 470 NJ 470 NJ
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)neural_soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 250 NJ 250 NJ
+preplace netloc EXPORT<net_container>neural_soc</net_container>(MASTER)neural_soc.sdram_clk,(MASTER)sdram_pll.c1) 1 3 1 N
+preplace netloc EXPORT<net_container>neural_soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)neural_soc.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>neural_soc</net_container>(SLAVE)onchip_memory2_0.reset1,(SLAVE)key.reset,(SLAVE)sdram_pll.inclk_interface_reset,(MASTER)clk_0.clk_reset,(SLAVE)led.reset,(SLAVE)switch.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)sdram.reset) 1 1 2 310 690 730
+preplace netloc FAN_OUT<net_container>neural_soc</net_container>(SLAVE)sysid_qsys_0.clk,(SLAVE)sdram_pll.inclk_interface,(SLAVE)led.clk,(SLAVE)switch.clk,(MASTER)clk_0.clk,(SLAVE)key.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)onchip_memory2_0.clk1) 1 1 2 290 590 710
+levelinfo -pg 1 0 80 1100
+levelinfo -hier neural_soc 90 120 450 800 1010

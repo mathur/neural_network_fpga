@@ -6,11 +6,16 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element $${FILENAME}
    {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
    }
    element clk_0
    {
@@ -66,6 +71,14 @@
       {
          value = "4096";
          type = "String";
+      }
+   }
+   element nios_custom_instr_floating_point_2_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
       }
    }
    element onchip_memory2_0
@@ -162,7 +175,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="neural.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -239,7 +252,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="nios_custom_instr_floating_point_2_0" baseAddress="224" addressSpan="16" clockCycleType="COMBINATORIAL" /><slave name="nios_custom_instr_floating_point_2_0_1" baseAddress="248" addressSpan="8" clockCycleType="VARIABLE" /></info>]]></parameter>
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -401,6 +414,15 @@
   <parameter name="tmr_enabled" value="false" />
   <parameter name="tracefilename" value="" />
   <parameter name="userDefinedSettings" value="" />
+ </module>
+ <module
+   name="nios_custom_instr_floating_point_2_0"
+   kind="altera_nios_custom_instr_floating_point_2"
+   version="15.0"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
  </module>
  <module
    name="onchip_memory2_0"
@@ -782,6 +804,24 @@
    version="15.0"
    start="clk_0.clk"
    end="sdram_pll.inclk_interface" />
+ <connection
+   kind="nios_custom_instruction"
+   version="15.0"
+   start="nios2_gen2_0.custom_instruction_master"
+   end="nios_custom_instr_floating_point_2_0.s1">
+  <parameter name="CIName">nios_custom_instr_floating_point_2_0</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="224" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="15.0"
+   start="nios2_gen2_0.custom_instruction_master"
+   end="nios_custom_instr_floating_point_2_0.s2">
+  <parameter name="CIName">nios_custom_instr_floating_point_2_0_1</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="248" />
+ </connection>
  <connection
    kind="reset"
    version="15.0"

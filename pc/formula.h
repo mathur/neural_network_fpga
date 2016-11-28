@@ -8,13 +8,13 @@
 
 #include "const.h"
 
-double sigmoid(double x);
-double inv_sigmoid(double x);
-double err(double o, double t);
-double inv_err(double o, double t);
+float sigmoid(float x);
+float inv_sigmoid(float x);
+float err(float o, float t);
+float inv_err(float o, float t);
 
 // attempts at easier sigmoids
-double exp_fast_schraudolph(double a);
-double factorial(double n);
+float exp_fast_schraudolph(float a);
+float factorial(float n);
 
 #endif // FORMULA_H_

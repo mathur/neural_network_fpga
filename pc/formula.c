@@ -1,15 +1,15 @@
 #include "formula.h"
 
-double sigmoid(double x) {
+float sigmoid(float x) {
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);
 
-        double pow0 = 1;
-    	double pow1 = x;
-    	double pow2 = pow1 * x;
+        float pow0 = 1;
+    	float pow1 = x;
+    	float pow2 = pow1 * x;
 
-        double approx = pow0 + pow1 + pow2/2.0;
+        float approx = pow0 + pow1 + pow2/2.0;
 
         if (sign) {
         	return approx / (1.0 + approx);
@@ -22,7 +22,7 @@ double sigmoid(double x) {
     }
 }
 
-double inv_sigmoid(double x) {
+float inv_sigmoid(float x) {
 	if(!ON_FPGA) {
 		return sigmoid(x) * (1 - sigmoid(x));
 	} else {
@@ -31,7 +31,7 @@ double inv_sigmoid(double x) {
 	}
 }
 
-double err(double o, double t) {
+float err(float o, float t) {
 	if(!ON_FPGA) {
 		return 0.5 * ((t - o) * (t - o));
 	} else {
@@ -40,7 +40,7 @@ double err(double o, double t) {
 	}
 }
 
-double inv_err(double o, double t) {
+float inv_err(float o, float t) {
 	if(!ON_FPGA) {
 		return (o - t);
 	} else {

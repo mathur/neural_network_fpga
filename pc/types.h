@@ -10,52 +10,52 @@
 
 // dynamically sized array
 typedef struct {
- 	double * 	array;
+ 	float * 	array;
  	uint32_t 	used;
- 	double 		size;
+ 	float 		size;
 } array_t;
 
-void init_array(array_t * a, double initial_size);
-void insert_array(array_t * a, double element);
-double get_array_value(array_t * a, uint32_t idx);
+void init_array(array_t * a, float initial_size);
+void insert_array(array_t * a, float element);
+float get_array_value(array_t * a, uint32_t idx);
 void free_array(array_t * a);
 void print_array(array_t * a);
 
-double dot_product_1(array_t * arr1, double * arr2, double size, uint32_t curr_point);
-double dot_product_2(double * arr1, double * arr2, double size);
+float dot_product_1(array_t * arr1, float * arr2, float size, uint32_t curr_point);
+float dot_product_2(float * arr1, float * arr2, float size);
 
 // neural network layers
 typedef struct {
-	double *	input_vals;
-	double		curr_point;
-	double		num_nodes;
-	double		layer_num;
-	double		input_num_nodes;
-	double **	weights;
-	double **	weight_deltas;
-	double *	layer_net;
-	double *	layer_out;
-	double		bias;
+	float *	input_vals;
+	float		curr_point;
+	float		num_nodes;
+	float		layer_num;
+	float		input_num_nodes;
+	float **	weights;
+	float **	weight_deltas;
+	float *	layer_net;
+	float *	layer_out;
+	float		bias;
 } layer_2_t;
 
-void init_layer_2(layer_2_t * l, double * input_vals, double curr_point, double num_nodes, double layer_num, double input_num_nodes);
+void init_layer_2(layer_2_t * l, float * input_vals, float curr_point, float num_nodes, float layer_num, float input_num_nodes);
 void eval_layer_2(layer_2_t * l);
-void backprop_layer_2(layer_2_t * l, double other);
+void backprop_layer_2(layer_2_t * l, float other);
 void free_layer_2(layer_2_t * l);
 
 typedef struct {
 	array_t	*	input_vals;
-	double		curr_point;
-	double		num_nodes;
-	double		layer_num;
-	double **	weights;
-	double **	weight_deltas;
-	double *	layer_net;
-	double *	layer_out;
-	double		bias;
+	float		curr_point;
+	float		num_nodes;
+	float		layer_num;
+	float **	weights;
+	float **	weight_deltas;
+	float *	layer_net;
+	float *	layer_out;
+	float		bias;
 } layer_1_t;
 
-void init_layer_1(layer_1_t * l, array_t * input_vals, double curr_point, double num_nodes, double layer_num);
+void init_layer_1(layer_1_t * l, array_t * input_vals, float curr_point, float num_nodes, float layer_num);
 void eval_layer_1(layer_1_t * l);
 void backprop_layer_1(layer_1_t * l, layer_2_t * other);
 void free_layer_1(layer_1_t * l);

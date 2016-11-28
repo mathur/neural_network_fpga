@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/neural_network_fpga/simulation/modelsim
+vsigmoid_fixpt
+!s110 1480374123
+!i10b 1
+!s100 9TP7ih]Z2C49QW[jFKJ;12
+I8b369dYzj3k7VkYi:j2aL0
+V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1480373988
+8C:/neural_network_fpga/sigmoid_fixpt.v
+FC:/neural_network_fpga/sigmoid_fixpt.v
+L0 28
+OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1480374123.138000
+!s107 C:/neural_network_fpga/sigmoid_fixpt.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/neural_network_fpga|C:/neural_network_fpga/sigmoid_fixpt.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/neural_network_fpga

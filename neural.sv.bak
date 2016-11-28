@@ -1,0 +1,11 @@
+module neural(
+	input logic [31:0] x,
+	output logic [31:0] result 
+);
+
+	sigmoid_fixpt sigmoid(
+	.x_1(x),
+	.result(result)
+	);
+
+endmodule

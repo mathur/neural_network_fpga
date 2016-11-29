@@ -13,8 +13,6 @@ float inv_sigmoid(float x);
 float err(float o, float t);
 float inv_err(float o, float t);
 
-// attempts at easier sigmoids
-float exp_fast_schraudolph(float a);
-float factorial(float n);
+static void printme(void *c, size_t n);
 
 #endif // FORMULA_H_

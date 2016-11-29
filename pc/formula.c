@@ -1,6 +1,7 @@
 #include "formula.h"
 
 float sigmoid(float x) {
+	printme(&x, sizeof(float));
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);
@@ -47,4 +48,18 @@ float inv_err(float o, float t) {
 		// nothing yet
 		return 0.0;
 	}
+}
+
+static void printme(void *c, size_t n) {
+	printf("%f : ", *((float *) c));
+	unsigned char *t = c;
+	if (c == NULL)
+		return;
+	while (n > 0) {
+		int q;
+		--n;
+		for(q = 0x80; q; q >>= 1)
+			printf("%x", !!(t[n] & q));
+	}
+	printf("\n");
 }

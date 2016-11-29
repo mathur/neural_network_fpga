@@ -1,7 +1,10 @@
 #include "formula.h"
 
 float sigmoid(float x) {
-	printme(&x, sizeof(float));
+	if(DEBUG) {
+		debug(x);
+	}
+
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);
@@ -50,8 +53,17 @@ float inv_err(float o, float t) {
 	}
 }
 
+void debug(float x) {
+	printf("Floating Point:\n");
+	printf("%f : ", x);
+	printme(&x, sizeof(float));
+
+	printf("Fixed Point:\n");
+	// convert to fixed point
+	printf("\n");
+}
+
 static void printme(void *c, size_t n) {
-	printf("%f : ", *((float *) c));
 	unsigned char *t = c;
 	if (c == NULL)
 		return;

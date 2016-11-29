@@ -7,6 +7,7 @@
 #include <math.h>
 
 #include "const.h"
+#include "hw.h"
 
 float sigmoid(float x);
 float inv_sigmoid(float x);

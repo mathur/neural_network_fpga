@@ -21,36 +21,21 @@ float sigmoid(float x) {
         	return 1.0 / (1.0 + approx);
         }
     } else {
-        // nothing yet
-        return 0.0;
+        send(x);
+        return recieve();
     }
 }
 
 float inv_sigmoid(float x) {
-	if(!ON_FPGA) {
-		return sigmoid(x) * (1 - sigmoid(x));
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+	return sigmoid(x) * (1 - sigmoid(x));
 }
 
 float err(float o, float t) {
-	if(!ON_FPGA) {
-		return 0.5 * ((t - o) * (t - o));
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+	return 0.5 * ((t - o) * (t - o));
 }
 
 float inv_err(float o, float t) {
-	if(!ON_FPGA) {
-		return (o - t);
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+	return (o - t);
 }
 
 void debug(float x) {

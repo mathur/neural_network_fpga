@@ -1,0 +1,15 @@
+module spu_pre(
+	input  logic	[31:0] x_float,
+	output logic 			 x_sign,
+	output logic	[31:0] x_fixpt
+);
+
+	always_comb
+	begin
+		// sign bit
+		x_sign <= x_float[31];
+		
+		
+	end
+
+endmodule

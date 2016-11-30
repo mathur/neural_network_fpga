@@ -1,5 +1,5 @@
 Analysis & Synthesis report for neural
-Mon Nov 28 17:01:48 2016
+Wed Nov 30 16:30:29 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -16,13 +16,14 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
   8. Analysis & Synthesis DSP Block Usage Summary
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 13. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 11. Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_divide:Div1
+ 13. Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_mult:Mult0
  14. lpm_mult Parameter Settings by Entity Instance
  15. Post-Synthesis Netlist Statistics for Top Partition
  16. Elapsed Time Per Partition
  17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,16 +50,16 @@ agreement for further details.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 28 17:01:48 2016                     ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 30 16:30:29 2016                     ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
 ; Revision Name                      ; neural                                                    ;
-; Top-level Entity Name              ; sigmoid_fixpt                                             ;
+; Top-level Entity Name              ; neural                                                    ;
 ; Family                             ; Cyclone IV E                                              ;
-; Total logic elements               ; 4,515                                                     ;
-;     Total combinational functions  ; 4,515                                                     ;
+; Total logic elements               ; 5,151                                                     ;
+;     Total combinational functions  ; 5,151                                                     ;
 ;     Dedicated logic registers      ; 0                                                         ;
 ; Total registers                    ; 0                                                         ;
-; Total pins                         ; 65                                                        ;
+; Total pins                         ; 64                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
 ; Embedded Multiplier 9-bit elements ; 8                                                         ;
@@ -72,7 +73,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; sigmoid_fixpt      ; neural             ;
+; Top-level entity name                                                      ; neural             ; neural             ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,7 +170,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; spu_pre.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/neural_network_fpga/spu_pre.sv                                  ;         ;
+; neural.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/neural_network_fpga/neural.sv                                   ;         ;
 ; sigmoid_fixpt.v                  ; yes             ; User Verilog HDL File        ; C:/neural_network_fpga/sigmoid_fixpt.v                             ;         ;
+; spu_post.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/neural_network_fpga/spu_post.sv                                 ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
@@ -191,56 +195,59 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                 ;
-+---------------------------------------------+-------------------------------+
-; Resource                                    ; Usage                         ;
-+---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 4,515                         ;
-;                                             ;                               ;
-; Total combinational functions               ; 4515                          ;
-; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 1133                          ;
-;     -- 3 input functions                    ; 3106                          ;
-;     -- <=2 input functions                  ; 276                           ;
-;                                             ;                               ;
-; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 2247                          ;
-;     -- arithmetic mode                      ; 2268                          ;
-;                                             ;                               ;
-; Total registers                             ; 0                             ;
-;     -- Dedicated logic registers            ; 0                             ;
-;     -- I/O registers                        ; 0                             ;
-;                                             ;                               ;
-; I/O pins                                    ; 65                            ;
-;                                             ;                               ;
-; Embedded Multiplier 9-bit elements          ; 8                             ;
-;                                             ;                               ;
-; Maximum fan-out node                        ; sigmoid_fixpt_add_temp_0[7]~0 ;
-; Maximum fan-out                             ; 187                           ;
-; Total fan-out                               ; 14400                         ;
-; Average fan-out                             ; 3.09                          ;
-+---------------------------------------------+-------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                       ;
++---------------------------------------------+-----------------------------------------------------+
+; Resource                                    ; Usage                                               ;
++---------------------------------------------+-----------------------------------------------------+
+; Estimated Total logic elements              ; 5,151                                               ;
+;                                             ;                                                     ;
+; Total combinational functions               ; 5151                                                ;
+; Logic element usage by number of LUT inputs ;                                                     ;
+;     -- 4 input functions                    ; 1612                                                ;
+;     -- 3 input functions                    ; 3231                                                ;
+;     -- <=2 input functions                  ; 308                                                 ;
+;                                             ;                                                     ;
+; Logic elements by mode                      ;                                                     ;
+;     -- normal mode                          ; 2875                                                ;
+;     -- arithmetic mode                      ; 2276                                                ;
+;                                             ;                                                     ;
+; Total registers                             ; 0                                                   ;
+;     -- Dedicated logic registers            ; 0                                                   ;
+;     -- I/O registers                        ; 0                                                   ;
+;                                             ;                                                     ;
+; I/O pins                                    ; 64                                                  ;
+;                                             ;                                                     ;
+; Embedded Multiplier 9-bit elements          ; 8                                                   ;
+;                                             ;                                                     ;
+; Maximum fan-out node                        ; sigmoid_fixpt:sigmoid|sigmoid_fixpt_add_temp_0[7]~0 ;
+; Maximum fan-out                             ; 196                                                 ;
+; Total fan-out                               ; 16757                                               ;
+; Average fan-out                             ; 3.17                                                ;
++---------------------------------------------+-----------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                      ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                  ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |sigmoid_fixpt                         ; 4515 (124)        ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 65   ; 0            ; |sigmoid_fixpt                                                                                                                       ; work         ;
-;    |lpm_divide:Div0|                   ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div0                                                                                                       ; work         ;
-;       |lpm_divide_okm:auto_generated|  ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div0|lpm_divide_okm:auto_generated                                                                         ; work         ;
-;          |sign_div_unsign_gnh:divider| ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider                                             ; work         ;
-;             |alt_u_div_kaf:divider|    ; 2705 (2704)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider|alt_u_div_kaf:divider                       ; work         ;
-;                |add_sub_8pc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider|alt_u_div_kaf:divider|add_sub_8pc:add_sub_1 ; work         ;
-;    |lpm_divide:Div1|                   ; 1609 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div1                                                                                                       ; work         ;
-;       |lpm_divide_hkm:auto_generated|  ; 1609 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div1|lpm_divide_hkm:auto_generated                                                                         ; work         ;
-;          |sign_div_unsign_9nh:divider| ; 1609 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
-;             |alt_u_div_6af:divider|    ; 1609 (1609)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sigmoid_fixpt|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
-;    |lpm_mult:Mult0|                    ; 77 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |sigmoid_fixpt|lpm_mult:Mult0                                                                                                        ; work         ;
-;       |mult_7dt:auto_generated|        ; 77 (77)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |sigmoid_fixpt|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; work         ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |neural                                   ; 5151 (0)          ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 64   ; 0            ; |neural                                                                                                                                             ; work         ;
+;    |sigmoid_fixpt:sigmoid|                ; 4527 (135)        ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                   ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_okm:auto_generated|  ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div0|lpm_divide_okm:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_gnh:divider| ; 2705 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider                                             ; work         ;
+;                |alt_u_div_kaf:divider|    ; 2705 (2704)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider|alt_u_div_kaf:divider                       ; work         ;
+;                   |add_sub_8pc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_gnh:divider|alt_u_div_kaf:divider|add_sub_8pc:add_sub_1 ; work         ;
+;       |lpm_divide:Div1|                   ; 1610 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div1                                                                                                       ; work         ;
+;          |lpm_divide_hkm:auto_generated|  ; 1610 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div1|lpm_divide_hkm:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 1610 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;                |alt_u_div_6af:divider|    ; 1610 (1610)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_divide:Div1|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
+;       |lpm_mult:Mult0|                    ; 77 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_mult:Mult0                                                                                                        ; work         ;
+;          |mult_7dt:auto_generated|        ; 77 (77)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |neural|sigmoid_fixpt:sigmoid|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; work         ;
+;    |spu_post:postprocessor|               ; 371 (371)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|spu_post:postprocessor                                                                                                                      ; work         ;
+;    |spu_pre:preprocessor|                 ; 253 (253)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |neural|spu_pre:preprocessor                                                                                                                        ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -277,114 +284,124 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |sigmoid_fixpt|result_1    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|Mux1          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|Mux2          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|Mux1          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|x_fixpt[30]   ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|x_fixpt[10]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|x_fixpt[28]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|x_fixpt[8]    ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |neural|sigmoid_fixpt:sigmoid|result[27]   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |neural|spu_pre:preprocessor|x_fixpt[1]    ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 28 LEs               ; 2 LEs                  ; No         ; |neural|spu_post:postprocessor|x_float[24] ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |neural|spu_post:postprocessor|x_float[26] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 56             ; Untyped                ;
-; LPM_WIDTHD             ; 33             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_okm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 56             ; Untyped                                      ;
+; LPM_WIDTHD             ; 33             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_okm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 40             ; Untyped                ;
-; LPM_WIDTHD             ; 33             ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_hkm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 40             ; Untyped                                      ;
+; LPM_WIDTHD             ; 33             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_hkm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
-+------------------------------------------------+--------------+---------------------+
-; Parameter Name                                 ; Value        ; Type                ;
-+------------------------------------------------+--------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 32           ; Untyped             ;
-; LPM_WIDTHB                                     ; 32           ; Untyped             ;
-; LPM_WIDTHP                                     ; 64           ; Untyped             ;
-; LPM_WIDTHR                                     ; 64           ; Untyped             ;
-; LPM_WIDTHS                                     ; 1            ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
-; LPM_PIPELINE                                   ; 0            ; Untyped             ;
-; LATENCY                                        ; 0            ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
-; USE_EAB                                        ; OFF          ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
-+------------------------------------------------+--------------+---------------------+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sigmoid_fixpt:sigmoid|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-----------------------+
+; Parameter Name                                 ; Value        ; Type                  ;
++------------------------------------------------+--------------+-----------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE        ;
+; LPM_WIDTHA                                     ; 32           ; Untyped               ;
+; LPM_WIDTHB                                     ; 32           ; Untyped               ;
+; LPM_WIDTHP                                     ; 64           ; Untyped               ;
+; LPM_WIDTHR                                     ; 64           ; Untyped               ;
+; LPM_WIDTHS                                     ; 1            ; Untyped               ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped               ;
+; LPM_PIPELINE                                   ; 0            ; Untyped               ;
+; LATENCY                                        ; 0            ; Untyped               ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped               ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped               ;
+; USE_EAB                                        ; OFF          ; Untyped               ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped               ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped               ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped               ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K   ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped               ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped               ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped               ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped               ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped               ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped               ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped               ;
++------------------------------------------------+--------------+-----------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance         ;
-+---------------------------------------+----------------+
-; Name                                  ; Value          ;
-+---------------------------------------+----------------+
-; Number of entity instances            ; 1              ;
-; Entity Instance                       ; lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 32             ;
-;     -- LPM_WIDTHB                     ; 32             ;
-;     -- LPM_WIDTHP                     ; 64             ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
-;     -- INPUT_A_IS_CONSTANT            ; NO             ;
-;     -- INPUT_B_IS_CONSTANT            ; NO             ;
-;     -- USE_EAB                        ; OFF            ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
-+---------------------------------------+----------------+
++------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                               ;
++---------------------------------------+--------------------------------------+
+; Name                                  ; Value                                ;
++---------------------------------------+--------------------------------------+
+; Number of entity instances            ; 1                                    ;
+; Entity Instance                       ; sigmoid_fixpt:sigmoid|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                   ;
+;     -- LPM_WIDTHB                     ; 32                                   ;
+;     -- LPM_WIDTHP                     ; 64                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                   ;
+;     -- USE_EAB                        ; OFF                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                   ;
++---------------------------------------+--------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -392,22 +409,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 65                          ;
-; cycloneiii_lcell_comb ; 4516                        ;
-;     arith             ; 2268                        ;
-;         2 data inputs ; 105                         ;
-;         3 data inputs ; 2163                        ;
-;     normal            ; 2248                        ;
-;         0 data inputs ; 96                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 74                          ;
-;         3 data inputs ; 943                         ;
-;         4 data inputs ; 1133                        ;
+; boundary_port         ; 64                          ;
+; cycloneiii_lcell_comb ; 5172                        ;
+;     arith             ; 2276                        ;
+;         2 data inputs ; 107                         ;
+;         3 data inputs ; 2169                        ;
+;     normal            ; 2896                        ;
+;         0 data inputs ; 97                          ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 103                         ;
+;         3 data inputs ; 1062                        ;
+;         4 data inputs ; 1612                        ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 258.00                      ;
-; Average LUT depth     ; 219.89                      ;
+; Max LUT depth         ; 265.20                      ;
+; Average LUT depth     ; 224.65                      ;
 +-----------------------+-----------------------------+
 
 
@@ -416,7 +433,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:28     ;
+; Top            ; 00:00:39     ;
 +----------------+--------------+
 
 
@@ -426,21 +443,205 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Mon Nov 28 17:01:06 2016
+    Info: Processing started: Wed Nov 30 16:29:34 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off neural -c neural
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file spu_pre.sv
+    Info (12023): Found entity 1: spu_pre
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/neural_soc.v
+    Info (12023): Found entity 1: neural_soc
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_irq_mapper.sv
+    Info (12023): Found entity 1: neural_soc_irq_mapper
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0.v
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_avalon_st_adapter.v
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_avalon_st_adapter
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_handshake_clock_crosser
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_avalon_st_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_clock_crosser
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_avalon_st_pipeline_base.v
+    Info (12023): Found entity 1: altera_avalon_st_pipeline_base
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator
+    Info (12023): Found entity 2: altera_merlin_arb_adder
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_rsp_mux_001.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_rsp_mux_001
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_rsp_mux.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_rsp_mux
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_rsp_demux_004.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_rsp_demux_004
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_rsp_demux.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_rsp_demux
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_cmd_mux_004.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_cmd_mux_004
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_cmd_mux.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_cmd_mux
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_cmd_demux_001.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_cmd_demux_001
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_cmd_demux.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_cmd_demux
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_router_006.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_router_006_default_decode
+    Info (12023): Found entity 2: neural_soc_mm_interconnect_0_router_006
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_router_002.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_router_002_default_decode
+    Info (12023): Found entity 2: neural_soc_mm_interconnect_0_router_002
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_router_001.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_router_001_default_decode
+    Info (12023): Found entity 2: neural_soc_mm_interconnect_0_router_001
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/neural_soc_mm_interconnect_0_router.sv
+    Info (12023): Found entity 1: neural_soc_mm_interconnect_0_router_default_decode
+    Info (12023): Found entity 2: neural_soc_mm_interconnect_0_router
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect.sv
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_customins_slave_translator.sv
+    Info (12023): Found entity 1: altera_customins_slave_translator
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect.sv
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/altera_customins_master_translator.v
+    Info (12023): Found entity 1: altera_customins_master_translator
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_sysid_qsys_0.v
+    Info (12023): Found entity 1: neural_soc_sysid_qsys_0
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_switch.v
+    Info (12023): Found entity 1: neural_soc_switch
+Info (12021): Found 4 design units, including 4 entities, in source file neural_soc/synthesis/submodules/neural_soc_sdram_pll.v
+    Info (12023): Found entity 1: neural_soc_sdram_pll_dffpipe_l2c
+    Info (12023): Found entity 2: neural_soc_sdram_pll_stdsync_sv6
+    Info (12023): Found entity 3: neural_soc_sdram_pll_altpll_lqa2
+    Info (12023): Found entity 4: neural_soc_sdram_pll
+Info (12021): Found 2 design units, including 2 entities, in source file neural_soc/synthesis/submodules/neural_soc_sdram.v
+    Info (12023): Found entity 1: neural_soc_sdram_input_efifo_module
+    Info (12023): Found entity 2: neural_soc_sdram
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_onchip_memory2_0.v
+    Info (12023): Found entity 1: neural_soc_onchip_memory2_0
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios_custom_instr_floating_point_2_0.v
+    Info (12023): Found entity 1: neural_soc_nios_custom_instr_floating_point_2_0
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpoint2_multi.vhd
+    Info (12022): Found design unit 1: fpoint2_multi-fpmulti
+    Info (12023): Found entity 1: fpoint2_multi
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpoint2_multi_datapath.vhd
+    Info (12022): Found design unit 1: fpoint2_multi_datapath-fp_data_path
+    Info (12023): Found entity 1: fpoint2_multi_datapath
+Info (12021): Found 1 design units, including 0 entities, in source file neural_soc/synthesis/submodules/dspba_library_package.vhd
+    Info (12022): Found design unit 1: dspba_library_package (neural_soc)
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/dspba_library.vhd
+    Info (12022): Found design unit 1: dspba_delay-delay
+    Info (12023): Found entity 1: dspba_delay
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpaddsub/fpaddsub.vhd
+    Info (12022): Found design unit 1: FPAddSub-normal
+    Info (12023): Found entity 1: FPAddSub
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpdiv/fpdiv.vhd
+    Info (12022): Found design unit 1: FPDiv-beh
+    Info (12023): Found entity 1: FPDiv
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpmult/fpmult.vhd
+    Info (12022): Found design unit 1: FPMult-normal
+    Info (12023): Found entity 1: FPMult
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/inttofloat/inttofloat.vhd
+    Info (12022): Found design unit 1: IntToFloat-normal
+    Info (12023): Found entity 1: IntToFloat
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/floattoint/floattoint.vhd
+    Info (12022): Found design unit 1: FloatToInt-normal
+    Info (12023): Found entity 1: FloatToInt
+Info (12021): Found 2 design units, including 0 entities, in source file neural_soc/synthesis/submodules/fpsqrt/fpsqrt_safe_path.vhd
+    Info (12022): Found design unit 1: FPSqrt_safe_path (neural_soc)
+    Info (12022): Found design unit 2: FPSqrt_safe_path-body
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpsqrt/fpsqrt.vhd
+    Info (12022): Found design unit 1: FPSqrt-normal
+    Info (12023): Found entity 1: FPSqrt
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpoint2_combi.vhd
+    Info (12022): Found design unit 1: fpoint2_combi-fpcombi
+    Info (12023): Found entity 1: fpoint2_combi
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpminmaxfused/fpminmaxfused.vhd
+    Info (12022): Found design unit 1: FPMinMaxFused-normal
+    Info (12023): Found entity 1: FPMinMaxFused
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpcomparefused/fpcomparefused.vhd
+    Info (12022): Found design unit 1: FPCompareFused-normal
+    Info (12023): Found entity 1: FPCompareFused
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpneg_abs/fpneg.vhd
+    Info (12022): Found design unit 1: FPNeg-normal
+    Info (12023): Found entity 1: FPNeg
+Info (12021): Found 2 design units, including 1 entities, in source file neural_soc/synthesis/submodules/fpneg_abs/fpabs.vhd
+    Info (12022): Found design unit 1: FPAbs-normal
+    Info (12023): Found entity 1: FPAbs
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0
+Info (12021): Found 21 design units, including 21 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_cpu.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_cpu_register_bank_a_module
+    Info (12023): Found entity 2: neural_soc_nios2_gen2_0_cpu_register_bank_b_module
+    Info (12023): Found entity 3: neural_soc_nios2_gen2_0_cpu_nios2_oci_debug
+    Info (12023): Found entity 4: neural_soc_nios2_gen2_0_cpu_nios2_oci_break
+    Info (12023): Found entity 5: neural_soc_nios2_gen2_0_cpu_nios2_oci_xbrk
+    Info (12023): Found entity 6: neural_soc_nios2_gen2_0_cpu_nios2_oci_dbrk
+    Info (12023): Found entity 7: neural_soc_nios2_gen2_0_cpu_nios2_oci_itrace
+    Info (12023): Found entity 8: neural_soc_nios2_gen2_0_cpu_nios2_oci_td_mode
+    Info (12023): Found entity 9: neural_soc_nios2_gen2_0_cpu_nios2_oci_dtrace
+    Info (12023): Found entity 10: neural_soc_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt
+    Info (12023): Found entity 11: neural_soc_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc
+    Info (12023): Found entity 12: neural_soc_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc
+    Info (12023): Found entity 13: neural_soc_nios2_gen2_0_cpu_nios2_oci_fifo
+    Info (12023): Found entity 14: neural_soc_nios2_gen2_0_cpu_nios2_oci_pib
+    Info (12023): Found entity 15: neural_soc_nios2_gen2_0_cpu_nios2_oci_im
+    Info (12023): Found entity 16: neural_soc_nios2_gen2_0_cpu_nios2_performance_monitors
+    Info (12023): Found entity 17: neural_soc_nios2_gen2_0_cpu_nios2_avalon_reg
+    Info (12023): Found entity 18: neural_soc_nios2_gen2_0_cpu_ociram_sp_ram_module
+    Info (12023): Found entity 19: neural_soc_nios2_gen2_0_cpu_nios2_ocimem
+    Info (12023): Found entity 20: neural_soc_nios2_gen2_0_cpu_nios2_oci
+    Info (12023): Found entity 21: neural_soc_nios2_gen2_0_cpu
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_cpu_debug_slave_sysclk.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_cpu_debug_slave_sysclk
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_cpu_debug_slave_tck.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_cpu_debug_slave_tck
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_cpu_debug_slave_wrapper.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_cpu_debug_slave_wrapper
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_nios2_gen2_0_cpu_test_bench.v
+    Info (12023): Found entity 1: neural_soc_nios2_gen2_0_cpu_test_bench
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_led.v
+    Info (12023): Found entity 1: neural_soc_led
+Info (12021): Found 1 design units, including 1 entities, in source file neural_soc/synthesis/submodules/neural_soc_key.v
+    Info (12023): Found entity 1: neural_soc_key
+Info (12021): Found 1 design units, including 1 entities, in source file neural.sv
+    Info (12023): Found entity 1: neural
 Info (12021): Found 1 design units, including 1 entities, in source file sigmoid_fixpt.v
     Info (12023): Found entity 1: sigmoid_fixpt
-Info (12127): Elaborating entity "sigmoid_fixpt" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(63): inferring latch(es) for variable "sigmoid_fixpt_cast_1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(63): inferring latch(es) for variable "sigmoid_fixpt_div_temp", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(63): inferring latch(es) for variable "sigmoid_fixpt_div_temp_0", which holds its previous value in one or more paths through the always construct
+Info (12021): Found 1 design units, including 1 entities, in source file spu_post.sv
+    Info (12023): Found entity 1: spu_post
+Warning (10037): Verilog HDL or VHDL warning at neural_soc_sdram.v(316): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at neural_soc_sdram.v(326): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at neural_soc_sdram.v(336): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at neural_soc_sdram.v(680): conditional expression evaluates to a constant
+Info (12127): Elaborating entity "neural" for the top level hierarchy
+Info (12128): Elaborating entity "spu_pre" for hierarchy "spu_pre:preprocessor"
+Warning (10230): Verilog HDL assignment warning at spu_pre.sv(20): truncated value with size 32 to match size of target (9)
+Info (12128): Elaborating entity "sigmoid_fixpt" for hierarchy "sigmoid_fixpt:sigmoid"
+Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(27): inferring latch(es) for variable "sigmoid_fixpt_cast_1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(27): inferring latch(es) for variable "sigmoid_fixpt_div_temp", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at sigmoid_fixpt.v(27): inferring latch(es) for variable "sigmoid_fixpt_div_temp_0", which holds its previous value in one or more paths through the always construct
+Info (12128): Elaborating entity "spu_post" for hierarchy "spu_post:postprocessor"
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0"
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sigmoid_fixpt:sigmoid|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sigmoid_fixpt:sigmoid|Div1"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "sigmoid_fixpt:sigmoid|Mult0"
+Info (12130): Elaborated megafunction instantiation "sigmoid_fixpt:sigmoid|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "sigmoid_fixpt:sigmoid|lpm_divide:Div0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "56"
     Info (12134): Parameter "LPM_WIDTHD" = "33"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -455,8 +656,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1"
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "sigmoid_fixpt:sigmoid|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "sigmoid_fixpt:sigmoid|lpm_divide:Div1" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "40"
     Info (12134): Parameter "LPM_WIDTHD" = "33"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -467,8 +668,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_9nh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
     Info (12023): Found entity 1: alt_u_div_6af
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "sigmoid_fixpt:sigmoid|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "sigmoid_fixpt:sigmoid|lpm_mult:Mult0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -483,25 +684,191 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mult
 Info (13014): Ignored 206 buffer(s)
     Info (13019): Ignored 206 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "result[0]" is stuck at GND
-    Warning (13410): Pin "result[1]" is stuck at GND
-    Warning (13410): Pin "result[2]" is stuck at GND
-    Warning (13410): Pin "result[3]" is stuck at GND
-    Warning (13410): Pin "result[4]" is stuck at GND
-    Warning (13410): Pin "result[5]" is stuck at GND
-    Warning (13410): Pin "result[6]" is stuck at GND
+    Warning (13410): Pin "result[30]" is stuck at GND
+    Warning (13410): Pin "result[31]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_sc_fifo -entity altera_avalon_sc_fifo -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_avalon_sc_fifo -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_avalon_sc_fifo -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_avalon_st_handshake_clock_crosser" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_st_handshake_clock_crosser -entity altera_avalon_st_handshake_clock_crosser -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_avalon_st_handshake_clock_crosser -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_avalon_st_handshake_clock_crosser -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_customins_master_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_customins_master_translator -entity altera_customins_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_customins_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_customins_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_customins_slave_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_customins_slave_translator -entity altera_customins_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_customins_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_customins_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_master_agent -entity altera_merlin_master_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_merlin_master_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_master_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_master_translator -entity altera_merlin_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_merlin_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_master_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_slave_agent -entity altera_merlin_slave_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_merlin_slave_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_slave_agent -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_slave_translator -entity altera_merlin_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_merlin_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_merlin_slave_translator -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "altera_reset_controller" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_reset_controller -entity altera_reset_controller -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity altera_reset_controller -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity altera_reset_controller -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "fpoint2_combi" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios_custom_instr_floating_point_2_combi -entity fpoint2_combi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity fpoint2_combi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity fpoint2_combi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "fpoint2_multi" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios_custom_instr_floating_point_2_multi -entity fpoint2_multi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity fpoint2_multi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity fpoint2_multi -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{Cyclone IV E\}" -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E" -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_QSYS_MODE SYSTEM -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME Qsys -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name SLD_INFO "QSYS_NAME neural_soc HAS_SOPCINFO 1 GENERATION_ID 1480283514" -entity neural_soc -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_irq_mapper" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_irq_mapper -entity neural_soc_irq_mapper -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_irq_mapper -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_irq_mapper -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_key" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity neural_soc_key -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_key -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_key -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_led" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity neural_soc_led -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_led -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_led -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_mm_interconnect -entity neural_soc_mm_interconnect_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_st_adapter -entity neural_soc_mm_interconnect_0_avalon_st_adapter -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_avalon_st_adapter -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_avalon_st_adapter -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME error_adapter -entity neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_avalon_st_adapter_error_adapter_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity neural_soc_mm_interconnect_0_cmd_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_cmd_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_cmd_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity neural_soc_mm_interconnect_0_cmd_demux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_cmd_demux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_cmd_demux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity neural_soc_mm_interconnect_0_cmd_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_cmd_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_cmd_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_cmd_mux_004" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity neural_soc_mm_interconnect_0_cmd_mux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_cmd_mux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_cmd_mux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_router" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity neural_soc_mm_interconnect_0_router -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_router -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_router -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_router_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity neural_soc_mm_interconnect_0_router_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_router_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_router_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_router_002" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity neural_soc_mm_interconnect_0_router_002 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_router_002 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_router_002 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_router_006" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_router -entity neural_soc_mm_interconnect_0_router_006 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_router_006 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_router_006 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity neural_soc_mm_interconnect_0_rsp_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_rsp_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_rsp_demux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_rsp_demux_004" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_demultiplexer -entity neural_soc_mm_interconnect_0_rsp_demux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_rsp_demux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_rsp_demux_004 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity neural_soc_mm_interconnect_0_rsp_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_rsp_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_rsp_mux -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_merlin_multiplexer -entity neural_soc_mm_interconnect_0_rsp_mux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_mm_interconnect_0_rsp_mux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_mm_interconnect_0_rsp_mux_001 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_nios2_gen2_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios2_gen2 -entity neural_soc_nios2_gen2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_nios2_gen2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_nios2_gen2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_nios2_gen2_0_cpu" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios2_gen2_unit -entity neural_soc_nios2_gen2_0_cpu -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_nios2_gen2_0_cpu -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_nios2_gen2_0_cpu -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_customins_xconnect -entity neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_nios2_gen2_0_custom_instruction_master_comb_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_customins_xconnect -entity neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_nios2_gen2_0_custom_instruction_master_multi_xconnect -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_nios_custom_instr_floating_point_2_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_nios_custom_instr_floating_point_2 -entity neural_soc_nios_custom_instr_floating_point_2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_nios_custom_instr_floating_point_2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_nios_custom_instr_floating_point_2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_onchip_memory2_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_onchip_memory2 -entity neural_soc_onchip_memory2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_onchip_memory2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_onchip_memory2_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_sdram" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_new_sdram_controller -entity neural_soc_sdram -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_sdram -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_sdram -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_sdram_pll" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altpll -entity neural_soc_sdram_pll -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_sdram_pll -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_sdram_pll -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_switch" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_pio -entity neural_soc_switch -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_switch -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_switch -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Warning (20013): Ignored assignments for entity "neural_soc_sysid_qsys_0" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_avalon_sysid_qsys -entity neural_soc_sysid_qsys_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 15.0 -entity neural_soc_sysid_qsys_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV Qsys -entity neural_soc_sysid_qsys_0 -qip neural_soc/synthesis/neural_soc.qip -library neural_soc was ignored
+Info (144001): Generated suppressed messages file C:/neural_network_fpga/output_files/neural.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4588 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 33 input pins
+Info (21057): Implemented 5223 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 4515 logic cells
+    Info (21061): Implemented 5151 logic cells
     Info (21062): Implemented 8 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 750 megabytes
-    Info: Processing ended: Mon Nov 28 17:01:48 2016
-    Info: Elapsed time: 00:00:42
-    Info: Total CPU time (on all processors): 00:01:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 176 warnings
+    Info: Peak virtual memory: 862 megabytes
+    Info: Processing ended: Wed Nov 30 16:30:29 2016
+    Info: Elapsed time: 00:00:55
+    Info: Total CPU time (on all processors): 00:01:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/neural_network_fpga/output_files/neural.map.smsg.
 
 

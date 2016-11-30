@@ -7,14 +7,14 @@
 #include <math.h>
 
 #include "const.h"
+#include "hw.h"
 
-double sigmoid(double x);
-double inv_sigmoid(double x);
-double err(double o, double t);
-double inv_err(double o, double t);
+float sigmoid(float x);
+float inv_sigmoid(float x);
+float err(float o, float t);
+float inv_err(float o, float t);
 
-// attempts at easier sigmoids
-double exp_fast_schraudolph(double a);
-double factorial(double n);
+void debug(float x);
+static void printme(void *c, size_t n);
 
 #endif // FORMULA_H_

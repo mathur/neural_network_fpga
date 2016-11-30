@@ -1,15 +1,19 @@
 #include "formula.h"
 
-double sigmoid(double x) {
+float sigmoid(float x) {
+	if(DEBUG) {
+		debug(x);
+	}
+
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);
 
-        double pow0 = 1;
-    	double pow1 = x;
-    	double pow2 = pow1 * x;
+        float pow0 = 1;
+    	float pow1 = x;
+    	float pow2 = pow1 * x;
 
-        double approx = pow0 + pow1 + pow2/2.0;
+        float approx = pow0 + pow1 + pow2/2.0;
 
         if (sign) {
         	return approx / (1.0 + approx);
@@ -17,34 +21,42 @@ double sigmoid(double x) {
         	return 1.0 / (1.0 + approx);
         }
     } else {
-        // nothing yet
-        return 0.0;
+        send(x);
+        return recieve();
     }
 }
 
-double inv_sigmoid(double x) {
-	if(!ON_FPGA) {
-		return sigmoid(x) * (1 - sigmoid(x));
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+float inv_sigmoid(float x) {
+	return sigmoid(x) * (1 - sigmoid(x));
 }
 
-double err(double o, double t) {
-	if(!ON_FPGA) {
-		return 0.5 * ((t - o) * (t - o));
-	} else {
-		// nothing yet
-		return 0.0;
-	}
+float err(float o, float t) {
+	return 0.5 * ((t - o) * (t - o));
 }
 
-double inv_err(double o, double t) {
-	if(!ON_FPGA) {
-		return (o - t);
-	} else {
-		// nothing yet
-		return 0.0;
+float inv_err(float o, float t) {
+	return (o - t);
+}
+
+void debug(float x) {
+	printf("Floating Point:\n");
+	printf("%f : ", x);
+	printme(&x, sizeof(float));
+
+	printf("Fixed Point:\n");
+	// convert to fixed point
+	printf("\n");
+}
+
+static void printme(void *c, size_t n) {
+	unsigned char *t = c;
+	if (c == NULL)
+		return;
+	while (n > 0) {
+		int q;
+		--n;
+		for(q = 0x80; q; q >>= 1)
+			printf("%x", !!(t[n] & q));
 	}
+	printf("\n");
 }

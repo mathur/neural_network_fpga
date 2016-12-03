@@ -1,0 +1,323 @@
+==================================================================
+Sat 03 Dec 2016 18:39:08 
+==================================================================
+Sat 03 Dec 2016 18:39:08 Configuring newlib to build a smallc C library in /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc...
+checking build system type... x86_64-unknown-cygwin
+checking host system type... x86_64-unknown-cygwin
+checking target system type... nios2-unknown-elf
+checking for a BSD-compatible install... /bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /bin/sed
+checking for gawk... gawk
+checking to see if cat works as expected... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.exe
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... .exe
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for gnatbind... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada... no
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking for objdir... .libs
+checking for version 0.11 of ISL... no
+checking for version 0.12 of ISL... no
+checking for default BUILD_CONFIG... 
+checking for bison... bison -y
+checking for bison... bison
+checking for gm4... no
+checking for gnum4... no
+checking for m4... m4
+checking for flex... no
+checking for lex... no
+checking for flex... no
+checking for makeinfo... makeinfo
+checking for expect... no
+checking for runtest... no
+checking for ar... ar
+checking for as... as
+checking for dlltool... dlltool
+checking for ld... ld
+checking for lipo... no
+checking for nm... nm
+checking for ranlib... ranlib
+checking for strip... strip
+checking for windres... windres
+checking for windmc... windmc
+checking for objcopy... objcopy
+checking for objdump... objdump
+checking for readelf... readelf
+checking for nios2-elf-cc... no
+checking for nios2-elf-gcc... nios2-elf-gcc
+checking for nios2-elf-c++... nios2-elf-c++
+checking for nios2-elf-gcc... nios2-elf-gcc
+checking for nios2-elf-gcj... no
+checking for nios2-elf-gfortran... no
+checking for nios2-elf-gccgo... no
+checking for nios2-elf-ar... nios2-elf-ar
+checking for nios2-elf-as... nios2-elf-as
+checking for nios2-elf-dlltool... no
+checking for nios2-elf-ld... nios2-elf-ld
+checking for nios2-elf-lipo... no
+checking for nios2-elf-nm... nios2-elf-nm
+checking for nios2-elf-objdump... nios2-elf-objdump
+checking for nios2-elf-ranlib... nios2-elf-ranlib
+checking for nios2-elf-readelf... nios2-elf-readelf
+checking for nios2-elf-strip... nios2-elf-strip
+checking for nios2-elf-windres... no
+checking for nios2-elf-windmc... no
+checking where to find the target ar... pre-installed
+checking where to find the target as... pre-installed
+checking where to find the target cc... pre-installed
+checking where to find the target c++... pre-installed
+checking where to find the target c++ for libstdc++... pre-installed
+checking where to find the target dlltool... pre-installed
+checking where to find the target gcc... pre-installed
+checking where to find the target gcj... pre-installed
+checking where to find the target gfortran... pre-installed
+checking where to find the target gccgo... pre-installed
+checking where to find the target ld... pre-installed
+checking where to find the target lipo... pre-installed
+checking where to find the target nm... pre-installed
+checking where to find the target objdump... pre-installed
+checking where to find the target ranlib... pre-installed
+checking where to find the target readelf... pre-installed
+checking where to find the target strip... pre-installed
+checking where to find the target windres... pre-installed
+checking where to find the target windmc... pre-installed
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile
+==================================================================
+Sat 03 Dec 2016 18:39:52 Configure smallc newlib -> COMPLETE.
+==================================================================
+Sat 03 Dec 2016 18:39:52 Compiling newlib for a smallc C library...
+Checking multilib configuration for newlib...
+mkdir -p -- nios2-elf/newlib
+Configuring in nios2-elf/newlib
+configure: creating cache ./config.cache
+checking build system type... x86_64-unknown-cygwin
+checking host system type... nios2-unknown-elf
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... nios2-elf-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking for gcc... /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... gcc3
+checking whether we are using GNU C... yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... no
+checking for nios2-elf-as... /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... /bin/sed
+checking how to print strings... printf
+checking for gawk... (cached) gawk
+checking for .preinit_array/.init_array/.fini_array support... (cached) no
+checking if /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -fno-tree-loop-distribute-patterns with __attribute__ ((__optimize__))... yes
+checking whether long double type exists... yes
+checking whether long double equals double... yes
+checking whether uintptr_t equals unsigned long long... no
+checking whether uintptr_t equals unsigned long... no
+configure: updating cache ./config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+Adding multilib support to Makefile in /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib
+multidirs=
+with_multisubdir=
+config.status: creating newlib.h
+config.status: executing depfiles commands
+=== configuring in libc (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libc)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc
+configure: loading cache .././config.cache
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking how to print strings... printf
+checking Checking long double support... (cached) yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating aeabi/Makefile
+config.status: creating argz/Makefile
+config.status: creating ctype/Makefile
+config.status: creating errno/Makefile
+config.status: creating locale/Makefile
+config.status: creating misc/Makefile
+config.status: creating reent/Makefile
+config.status: creating search/Makefile
+config.status: creating stdio/Makefile
+config.status: creating stdio64/Makefile
+config.status: creating stdlib/Makefile
+config.status: creating string/Makefile
+config.status: creating time/Makefile
+config.status: creating posix/Makefile
+config.status: creating signal/Makefile
+config.status: creating syscalls/Makefile
+config.status: creating unix/Makefile
+config.status: creating iconv/Makefile
+config.status: creating iconv/ces/Makefile
+config.status: creating iconv/ccs/Makefile
+config.status: creating iconv/ccs/binary/Makefile
+config.status: creating iconv/lib/Makefile
+config.status: creating xdr/Makefile
+config.status: executing depfiles commands
+=== configuring in machine (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libc/machine)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/machine/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=../.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/machine
+configure: loading cache ../.././config.cache
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking how to print strings... printf
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: executing depfiles commands
+=== configuring in nios2 (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libc/machine/nios2)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/machine/nios2/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=../../.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/machine/nios2
+configure: loading cache ../../.././config.cache
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: executing depfiles commands
+=== configuring in sys (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libc/sys)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/sys/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=../.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/sys
+configure: loading cache ../.././config.cache
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking how to print strings... printf
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: executing depfiles commands
+=== configuring in libm (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libm)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libm/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libm
+configure: loading cache .././config.cache
+checking Checking long double support... (cached) yes
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking how to print strings... printf
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating math/Makefile
+config.status: creating mathfp/Makefile
+config.status: creating common/Makefile
+config.status: creating complex/Makefile
+config.status: executing depfiles commands
+=== configuring in machine (/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/libm/machine)
+configure: running /bin/sh /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libm/machine/configure --disable-option-checking '--prefix=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib'  '--with-newlib' '--with-cross-host=x86_64-unknown-cygwin' '--enable-multilib' '--enable-newlib-nano-malloc' '--program-transform-name=s&^&nios2-elf-&' '--with-target-subdir=nios2-elf' '--build=x86_64-unknown-cygwin' '--host=nios2-elf' '--target=nios2-elf' 'build_alias=x86_64-unknown-cygwin' 'host_alias=nios2-elf' 'target_alias=nios2-elf' 'CC=/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ' 'CFLAGS=-g -Os -ffunction-sections -fdata-sections -mno-gpopt' 'LDFLAGS=' 'CPPFLAGS=' --cache-file=../.././config.cache --srcdir=/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libm/machine
+configure: loading cache ../.././config.cache
+checking build system type... (cached) x86_64-unknown-cygwin
+checking host system type... (cached) nios2-unknown-elf
+checking for a BSD-compatible install... (cached) /bin/install -c
+checking whether build environment is sane... yes
+checking for nios2-elf-strip... (cached) nios2-elf-strip
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   
+checking dependency style of /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2   ... (cached) gcc3
+checking whether we are using GNU C... (cached) yes
+checking whether /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-gcc -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/ -isystem /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/newlib/targ-include -isystem /cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/newlib/libc/include -B/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/nios2 -L/cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/smallc/nios2-elf/libgloss/libnosys -L/cygdrive/c/altera/16.0/nios2eds/bin/gnu/src/newlib-2.2/libgloss/nios2    accepts -g... (cached) no
+checking for nios2-elf-as... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-as
+checking for nios2-elf-ar... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ar
+checking for nios2-elf-ranlib... (cached) /cygdrive/c/neural_network_fpga/software/neural_bsp/newlib-build-tmp/build-newlib-stage-wrapper nios2-elf-ranlib
+checking for nios2-elf-readelf... (cached) nios2-elf-readelf
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking how to print strings... printf
+configure: creating ./config.status

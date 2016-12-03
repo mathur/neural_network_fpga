@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Nov 30 16:30:29 2016
+Analysis & Synthesis Status : Successful - Sat Dec 03 15:39:31 2016
 Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 Revision Name : neural
 Top-level Entity Name : neural
 Family : Cyclone IV E
-Total logic elements : 5,151
-    Total combinational functions : 5,151
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 64
+Total logic elements : 10,960
+    Total combinational functions : 9,726
+    Dedicated logic registers : 2,834
+Total registers : 2834
+Total pins : 142
 Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 8
-Total PLLs : 0
+Total memory bits : 26,752
+Embedded Multiplier 9-bit elements : 17
+Total PLLs : 1

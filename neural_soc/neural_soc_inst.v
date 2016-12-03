@@ -13,6 +13,8 @@
 		.sdram_wire_dqm     (<connected-to-sdram_wire_dqm>),     //            .dqm
 		.sdram_wire_ras_n   (<connected-to-sdram_wire_ras_n>),   //            .ras_n
 		.sdram_wire_we_n    (<connected-to-sdram_wire_we_n>),    //            .we_n
-		.switch_wire_export (<connected-to-switch_wire_export>)  // switch_wire.export
+		.switch_wire_export (<connected-to-switch_wire_export>), // switch_wire.export
+		.to_sw_port_export  (<connected-to-to_sw_port_export>),  //  to_sw_port.export
+		.to_hw_port_export  (<connected-to-to_hw_port_export>)   //  to_hw_port.export
 	);
 

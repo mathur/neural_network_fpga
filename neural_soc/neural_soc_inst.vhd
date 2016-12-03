@@ -14,7 +14,9 @@
 			sdram_wire_dqm     : out   std_logic_vector(3 downto 0);                     -- dqm
 			sdram_wire_ras_n   : out   std_logic;                                        -- ras_n
 			sdram_wire_we_n    : out   std_logic;                                        -- we_n
-			switch_wire_export : in    std_logic_vector(7 downto 0)  := (others => 'X')  -- export
+			switch_wire_export : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- export
+			to_sw_port_export  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+			to_hw_port_export  : out   std_logic_vector(31 downto 0)                     -- export
 		);
 	end component neural_soc;
 
@@ -34,6 +36,8 @@
 			sdram_wire_dqm     => CONNECTED_TO_sdram_wire_dqm,     --            .dqm
 			sdram_wire_ras_n   => CONNECTED_TO_sdram_wire_ras_n,   --            .ras_n
 			sdram_wire_we_n    => CONNECTED_TO_sdram_wire_we_n,    --            .we_n
-			switch_wire_export => CONNECTED_TO_switch_wire_export  -- switch_wire.export
+			switch_wire_export => CONNECTED_TO_switch_wire_export, -- switch_wire.export
+			to_sw_port_export  => CONNECTED_TO_to_sw_port_export,  --  to_sw_port.export
+			to_hw_port_export  => CONNECTED_TO_to_hw_port_export   --  to_hw_port.export
 		);
 

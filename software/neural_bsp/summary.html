@@ -16,16 +16,16 @@
 <td width="20%" bgcolor="#77BBFF">CPU:</td><td>nios2_gen2_0</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>.\settings.bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Settings File:</td><td>settings.bsp</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Nov 27, 2016 3:44:02 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Dec 3, 2016 3:51:40 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1480283042419</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1480801900866</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\neural_network_fpga\software\neural_bsp</td>
@@ -39,6 +39,21 @@
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>sdram</td><td>0x10000000 - 0x17FFFFFF</td><td>134217728</td><td class="listing">memory</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>jtag_uart_0</td><td>0x000000B0 - 0x000000B7</td><td>8</td><td class="listing">printable</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>to_sw_sig</td><td>0x000000A0 - 0x000000AF</td><td>16</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>to_sw_port</td><td>0x00000090 - 0x0000009F</td><td>16</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>to_hw_sig</td><td>0x00000080 - 0x0000008F</td><td>16</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>to_hw_port</td><td>0x00000070 - 0x0000007F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>key</td><td>0x00000060 - 0x0000006F</td><td>16</td><td class="listing">&nbsp;</td>
@@ -93,7 +108,101 @@
 <td>.stack</td><td>sdram</td>
 </tr>
 </table>
+<br>
+<br>
+<h3>Software Packages</h3>
+<table border="1" bgcolor="#FFFFCC" width="50%">
+<tr bgcolor="#77BBFF" mode="wrap">
+<th align="left" width="15%">Software Package</th><th align="left" width="15%">Version</th>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>altera_hostfs</td><td>default</td>
+</tr>
+</table>
+<br>
+<br>
 <h3>Settings</h3>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>public_mk_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_avalon_jtag_uart_driver.enable_small_driver</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_AVALON_JTAG_UART_SMALL</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>public_mk_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Small-footprint (polled mode) driver</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">altera_hostfs.hostfs_name</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>ALTERA_HOSTFS_NAME</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>/mnt/host</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>/mnt/host</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>QuotedString</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Mount point</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.custom_newlib_flags</td>
@@ -1914,7 +2023,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>none</td>
+<td width="20%">Value:</td><td>jtag_uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -1941,7 +2050,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>none</td>
+<td width="20%">Value:</td><td>jtag_uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -1968,7 +2077,7 @@
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>none</td>
+<td width="20%">Value:</td><td>jtag_uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

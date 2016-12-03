@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# A script to intercept and short-circuit the --print-multi-lib option
+#
+ORIGINAL_ARGS=$(echo $* | sed -e 's,/cygdrive/\([a-zA-Z]\)/,\1:/,g')
+CUSTOM=
+if [ "x$1" = "xnios2-elf-gcc" ]
+then
+    CUSTOM="  -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  "
+fi
+while [ $# -gt 0 ]
+do
+  case "$1" in
+      --print-multi-lib)
+          echo ".;"
+          exit 0
+          ;;
+      *)
+          ;;
+  esac
+  shift
+done
+eval $ORIGINAL_ARGS $CUSTOM

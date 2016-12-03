@@ -1,0 +1,12 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 7",
+		"os_version" : "6.2"
+	},
+	"error" : {
+		"executable" : "quartus_map",
+		"comment" : "not_applicable",
+		"error_message" : "temp_cap_inst",
+		"source_file" : "/quartus/synth/qsyn/qsyn_cmd.cpp",
+		"line" : "3260",

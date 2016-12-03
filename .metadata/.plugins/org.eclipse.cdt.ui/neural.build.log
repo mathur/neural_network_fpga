@@ -1,6 +1,9 @@
-15:44:13 **** Clean-only build of configuration Nios II for project neural ****
-make clean 
-[neural clean complete]
+16:03:30 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
 
-15:44:13 Build Finished (took 143ms)
+16:03:31 Build Finished (took 742ms)
 

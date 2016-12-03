@@ -12,15 +12,15 @@ module spu (
     logic        x_sign;
 
     sigmoid_fixpt sigmoid(
-        .x_fixpt, .x_sign,
-        .y_fixpt
+        .x(x_fixpt), .sign(x_sign),
+        .result(y_fixpt)
     );
 
     logic [31:0] y_fixpt;
 
     spu_post postprocessor (
-        .y_fixpt,
-        .y_float
+        .x_fixed(y_fixpt),
+        .x_float(y_float)
     );
 
 endmodule

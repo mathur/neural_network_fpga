@@ -1,10 +1,6 @@
 #include "formula.h"
 
 float sigmoid(float x) {
-	if(DEBUG) {
-		debug(x);
-	}
-
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);

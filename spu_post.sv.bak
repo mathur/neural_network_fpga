@@ -1,0 +1,9 @@
+module spu_post(
+	input		[31:0]	x_fixed,
+	output	[31:0]	x_float
+)
+
+	always_comb begin
+	end
+
+endmodule

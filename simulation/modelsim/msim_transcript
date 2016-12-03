@@ -1,5 +1,5 @@
 # Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
-# do neural_run_msim_rtl_verilog.do
+# do neural_run_msim_rtl_systemverilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
@@ -14,25 +14,99 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/neural_network_fpga {C:/neural_network_fpga/sigmoid_fixpt.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 17:02:03 on Nov 28,2016
+# Start time: 16:31:08 on Nov 30,2016
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/neural_network_fpga" C:/neural_network_fpga/sigmoid_fixpt.v 
 # -- Compiling module sigmoid_fixpt
 # 
 # Top level modules:
 # 	sigmoid_fixpt
-# End time: 17:02:03 on Nov 28,2016, Elapsed time: 0:00:00
+# End time: 16:31:08 on Nov 30,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/neural_network_fpga {C:/neural_network_fpga/spu_pre.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:31:08 on Nov 30,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/neural_network_fpga" C:/neural_network_fpga/spu_pre.sv 
+# -- Compiling module spu_pre
 # 
-vsim rtl_work.sigmoid_fixpt
-# vsim -gui "+altera" -l msim_transcript -do "neural_run_msim_rtl_verilog.do" 
-# Start time: 17:02:09 on Nov 28,2016
+# Top level modules:
+# 	spu_pre
+# End time: 16:31:08 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/neural_network_fpga {C:/neural_network_fpga/neural.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:31:08 on Nov 30,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/neural_network_fpga" C:/neural_network_fpga/neural.sv 
+# -- Compiling module neural
+# 
+# Top level modules:
+# 	neural
+# End time: 16:31:08 on Nov 30,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/neural_network_fpga {C:/neural_network_fpga/spu_post.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:31:08 on Nov 30,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/neural_network_fpga" C:/neural_network_fpga/spu_post.sv 
+# -- Compiling module spu_post
+# 
+# Top level modules:
+# 	spu_post
+# End time: 16:31:09 on Nov 30,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlib neural_soc
+# ** Warning: (vlib-34) Library already exists at "neural_soc".
+# 
+# vmap neural_soc neural_soc
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet neural_soc neural_soc 
+# Modifying modelsim.ini
+# 
+vsim rtl_work.neural
+# vsim -gui "+altera" -l msim_transcript -do "neural_run_msim_rtl_systemverilog.do" 
+# Start time: 16:31:16 on Nov 30,2016
+# Loading sv_std.std
+# Loading rtl_work.neural
+# Loading rtl_work.spu_pre
 # Loading rtl_work.sigmoid_fixpt
-wave create -driver freeze -pattern constant -value 0 -range 31 0 -starttime 0ns -endtime 10000ns sim:/sigmoid_fixpt/x
-# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
-wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ns -dutycycle 50 -starttime 0ns -endtime 1000ns sim:/sigmoid_fixpt/sign
+# Loading rtl_work.spu_post
 add wave -position insertpoint  \
-sim:/sigmoid_fixpt/result
-wave modify -driver freeze -pattern constant -value 00000000100000000000000000000000 -range 31 0 -starttime 400ns -endtime 10000ns Edit:/sigmoid_fixpt/x
+sim:/neural/result
+add wave -position insertpoint  \
+sim:/neural/fixed_pt_in
+add wave -position insertpoint  \
+sim:/neural/fixed_pt_out
+wave create -driver freeze -pattern constant -value 0 -range 31 0 -starttime 0ps -endtime 1000ps sim:/neural/x
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+wave modify -driver freeze -pattern constant -value 00111111000000000000000000000000 -range 31 0 -starttime 40ps -endtime 1000ps Edit:/neural/x
 run
-# End time: 17:08:35 on Nov 28,2016, Elapsed time: 0:06:26
+wave modify -driver freeze -pattern constant -value 10111111000000000000000000000000 -range 31 0 -starttime 40ps -endtime 1000ps Edit:/neural/x
+restart -a
+# Loading sv_std.std
+# Loading rtl_work.neural
+# Loading rtl_work.spu_pre
+# Loading rtl_work.spu_post
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart -a
+# Loading sv_std.std
+# Loading rtl_work.neural
+# Loading rtl_work.spu_pre
+# Loading rtl_work.spu_post
+wave modify -driver freeze -pattern constant -value 11000010000111110000111110010001 -range 31 0 -starttime 40ps -endtime 1000ps Edit:/neural/x
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart -a
+# Loading sv_std.std
+# Loading rtl_work.neural
+# Loading rtl_work.spu_pre
+# Loading rtl_work.spu_post
+wave modify -driver freeze -pattern constant -value 00111100000011110011001000111000 -range 31 0 -starttime 40ps -endtime 1000ps Edit:/neural/x
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# End time: 16:43:54 on Nov 30,2016, Elapsed time: 0:12:38
 # Errors: 0, Warnings: 0

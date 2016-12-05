@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4b096c2fdcebf83200d9"/>
+    <hash md5_digest_80b="1d15e4fb6b0c68e36efd"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="neural.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="neural_soc:m_neural_soc" name="m_neural_soc">
       <assignment_values>
-        <assignment_value text="QSYS_NAME neural_soc HAS_SOPCINFO 1 GENERATION_ID 1480800838"/>
+        <assignment_value text="QSYS_NAME neural_soc HAS_SOPCINFO 1 GENERATION_ID 1480977927"/>
       </assignment_values>
       <parameters/>
     </sld_info>

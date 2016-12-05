@@ -1,6 +1,6 @@
-15:42:05 **** Incremental Build of configuration Nios II for project neural_bsp ****
+17:03:49 **** Incremental Build of configuration Nios II for project neural_bsp ****
 make all 
 [BSP build complete]
 
-15:42:06 Build Finished (took 552ms)
+17:03:50 Build Finished (took 547ms)
 

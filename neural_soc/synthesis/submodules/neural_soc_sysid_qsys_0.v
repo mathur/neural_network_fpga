@@ -36,7 +36,7 @@ module neural_soc_sysid_qsys_0 (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1480974486 : 0;
+  assign readdata = address ? 1480977927 : 0;
 
 endmodule
 

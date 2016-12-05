@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 5, 2016 3:20:38 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1480972838444</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 5, 2016 4:58:37 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1480978717127</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\neural_network_fpga\software\neural_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\neural_soc.sopcinfo</SopcDesignFile>
@@ -947,7 +947,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>to_hw_port</slaveDescriptor>
+                <slaveDescriptor>to_sig_hw_port</slaveDescriptor>
                 <addressRange>0x00000070 - 0x0000007F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -959,7 +959,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>to_sw_port</slaveDescriptor>
+                <slaveDescriptor>to_sig_sw_port</slaveDescriptor>
                 <addressRange>0x00000090 - 0x0000009F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -975,6 +975,18 @@
                 <addressRange>0x000000B0 - 0x000000B7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>to_isig_hw_port</slaveDescriptor>
+                <addressRange>0x000000C0 - 0x000000CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>to_isig_sw_port</slaveDescriptor>
+                <addressRange>0x000000D0 - 0x000000DF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>

@@ -314,6 +314,11 @@
    type="conduit"
    dir="end" />
  <interface
+   name="to_hw_sig"
+   internal="to_hw_sig.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="to_isig_hw_port"
    internal="to_isig_hw_port.external_connection"
    type="conduit"
@@ -331,6 +336,11 @@
  <interface
    name="to_sig_sw_port"
    internal="to_sig_sw_port.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="to_sw_sig"
+   internal="to_sw_sig.external_connection"
    type="conduit"
    dir="end" />
  <module name="clk_0" kind="clock_source" version="15.0" enabled="1">

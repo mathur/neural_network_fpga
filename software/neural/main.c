@@ -1,5 +1,8 @@
 #include "main.h"
 
+volatile float *to_hw_sig = (float *) 0x00000080;
+volatile float *to_sw_sig = (float *) 0x000000a0;
+
 // each row has 1 target + 100 attributes
 array_t 	target_vals;
 array_t 	attr_vals;
@@ -72,6 +75,7 @@ int parse_testing_data() {
 
 int main() {
 	printf("Initializing neural network...\n");
+	*to_hw_sig = 1;
 	srand48(time(NULL));
 
 	init_array(&target_vals, INITIAL_ARR_SIZE);
@@ -164,6 +168,7 @@ int main() {
 	printf("Accuracy percentage: %0.2f%%\n", (1 - ((float) num_incorrect) / target_vals.used) * 100);
 	getchar();
 
+	*to_hw_sig = 0;
 	free_layer_1(&layer_1);
 	free_layer_2(&layer_2);
 	free_array(&target_vals);

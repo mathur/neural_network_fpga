@@ -19,10 +19,12 @@ module neural_soc (
 		output wire        sdram_wire_ras_n,       //                .ras_n
 		output wire        sdram_wire_we_n,        //                .we_n
 		input  wire [7:0]  switch_wire_export,     //     switch_wire.export
+		output wire [1:0]  to_hw_sig_export,       //       to_hw_sig.export
 		output wire [31:0] to_isig_hw_port_export, // to_isig_hw_port.export
 		input  wire [31:0] to_isig_sw_port_export, // to_isig_sw_port.export
 		output wire [31:0] to_sig_hw_port_export,  //  to_sig_hw_port.export
-		input  wire [31:0] to_sig_sw_port_export   //  to_sig_sw_port.export
+		input  wire [31:0] to_sig_sw_port_export,  //  to_sig_sw_port.export
+		input  wire [1:0]  to_sw_sig_export        //       to_sw_sig.export
 	);
 
 	wire         sdram_pll_c0_clk;                                                                   // sdram_pll:c0 -> [mm_interconnect_0:sdram_pll_c0_clk, rst_controller_001:clk, sdram:clk]
@@ -371,7 +373,7 @@ module neural_soc (
 		.writedata  (mm_interconnect_0_to_hw_sig_s1_writedata),  //                    .writedata
 		.chipselect (mm_interconnect_0_to_hw_sig_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_to_hw_sig_s1_readdata),   //                    .readdata
-		.out_port   ()                                           // external_connection.export
+		.out_port   (to_hw_sig_export)                           // external_connection.export
 	);
 
 	neural_soc_to_isig_hw_port to_isig_hw_port (
@@ -417,7 +419,7 @@ module neural_soc (
 		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
 		.address  (mm_interconnect_0_to_sw_sig_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_0_to_sw_sig_s1_readdata), //                    .readdata
-		.in_port  ()                                         // external_connection.export
+		.in_port  (to_sw_sig_export)                         // external_connection.export
 	);
 
 	altera_customins_master_translator #(

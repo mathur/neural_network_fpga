@@ -17,17 +17,30 @@ module neural (
 	inout  [31:0] DRAM_DQ
 );
 
-    logic [ 31:0] to_sw_port;
-    logic [ 31:0] to_hw_port;
+	enum logic [2:0] {HALT, RUN} state, next_state;
+
+	logic  [ 1:0] to_hw_sig;
+	logic  [ 1:0] to_sw_sig;
+	
+   logic [ 31:0] to_sig_sw_port;
+   logic [ 31:0] to_sig_hw_port;
+	
+	logic [ 31:0] to_isig_sw_port;
+   logic [ 31:0] to_isig_hw_port;
+	
+	logic [ 31:0] sig_output;
+	logic [ 31:0] isig_output;
+	
+	assign reset_n = KEY[0];
 
 	spu spu_proc (
 		.x_float(to_sig_hw_port),
-		.y_float(to_sig_sw_port)
+		.y_float(sig_output)
 	);
 
 	ispu ispu_proc (
 		.x_float(to_isig_hw_port),
-		.y_float(to_isig_sw_port)
+		.y_float(isig_output)
 	);
 
 	neural_soc m_neural_soc (
@@ -49,7 +62,44 @@ module neural (
 		.to_sig_sw_port_export(to_sig_sw_port),
 		.to_isig_hw_port_export(to_isig_hw_port),
 		.to_isig_sw_port_export(to_isig_sw_port),
-		.key_wire_export(KEY[3:0])
+		.key_wire_export(KEY[3:0]),
+		.to_hw_sig_export(to_hw_sig),
+		.to_sw_sig_export(to_sw_sig)
 	);
+	
+	always @ (posedge CLOCK_50, negedge reset_n) begin
+        if (reset_n == 1'b0) begin
+            state  <= HALT;
+        end else begin
+            state <= next_state;
+        end
+    end
+	 
+    always_comb begin
+        next_state = state;
+        unique case (state)
+            HALT: begin
+					if (to_hw_sig == 1)
+						next_state = RUN;
+            end
+				RUN: begin
+					if (to_hw_sig == 0)
+						next_state = HALT;
+				end
+        endcase
+    end
+
+    always_comb begin
+        unique case (state)
+            HALT: begin
+					to_sig_sw_port = 0;
+					to_isig_sw_port = 0;
+            end
+				RUN: begin
+					to_sig_sw_port = sig_output;
+					to_isig_sw_port = isig_output;
+				end
+        endcase
+    end
 
 endmodule

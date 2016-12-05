@@ -15,10 +15,12 @@ module neural_soc (
 	sdram_wire_ras_n,
 	sdram_wire_we_n,
 	switch_wire_export,
+	to_isig_hw_port_export,
+	to_isig_sw_port_export,
 	to_sig_hw_port_export,
 	to_sig_sw_port_export,
-	to_isig_hw_port_export,
-	to_isig_sw_port_export);	
+	to_hw_sig_export,
+	to_sw_sig_export);	
 
 	input		clk_clk;
 	input	[3:0]	key_wire_export;
@@ -35,8 +37,10 @@ module neural_soc (
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
 	input	[7:0]	switch_wire_export;
-	output	[31:0]	to_sig_hw_port_export;
-	input	[31:0]	to_sig_sw_port_export;
 	output	[31:0]	to_isig_hw_port_export;
 	input	[31:0]	to_isig_sw_port_export;
+	output	[31:0]	to_sig_hw_port_export;
+	input	[31:0]	to_sig_sw_port_export;
+	output	[1:0]	to_hw_sig_export;
+	input	[1:0]	to_sw_sig_export;
 endmodule

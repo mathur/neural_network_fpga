@@ -557,3 +557,800 @@ C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -
 15:42:05 **** Incremental Build of configuration Nios II for project neural_bsp ****
 make all 
 [BSP build complete]
+16:00:05 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+Makefile not up to date.
+../../neural_soc.sopcinfo has been modified since the BSP was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [public.mk] Error 1
+make: *** [../neural_bsp/-recurs-make-lib] Error 2
+16:00:06 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+Makefile not up to date.
+../../neural_soc.sopcinfo has been modified since the BSP was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make: *** [public.mk] Error 1
+16:00:32 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling alt_sys_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/alt_sys_init.o alt_sys_init.c
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Compiling altera_avalon_sysid_qsys.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_sysid_qsys.o drivers/src/altera_avalon_sysid_qsys.c
+Compiling altera_hostfs.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_hostfs.o drivers/src/altera_hostfs.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_hostfs.o
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480974486 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+16:00:39 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:00:50 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:02:30 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480974486 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+16:02:31 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:02:42 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:04:03 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480974486 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 869 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+16:04:05 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:04:13 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:15:14 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:15:14 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:15:23 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:15:49 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:15:49 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:15:55 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:16:44 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:16:44 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:16:53 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:20:01 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:20:02 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:20:21 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:20:22 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:20:43 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:22:39 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480974486 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+16:22:41 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:22:53 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+16:23:33 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480974486 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+16:23:34 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+16:23:44 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+17:00:34 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno    -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling alt_sys_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/alt_sys_init.o alt_sys_init.c
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Compiling altera_avalon_sysid_qsys.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_avalon_sysid_qsys.o drivers/src/altera_avalon_sysid_qsys.c
+Compiling altera_hostfs.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./newlib/nios2-elf/include -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mgpopt=local -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno   -o obj/drivers/src/altera_hostfs.o drivers/src/altera_hostfs.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_sysid_qsys.o obj/drivers/src/altera_hostfs.o
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+obj/default/main.o:(.sdata+0x0): multiple definition of `to_sig_hw_port'
+obj/default/formula.o:(.sdata+0x0): first defined here
+c:/altera/16.0/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.2.0/../../../../../H-x86_64-mingw32/nios2-elf/bin/ld.exe: Disabling relaxation: it will not work with multiple definitions
+obj/default/main.o: In function `parse_training_data':
+C:\neural_network_fpga\software\neural/main.c:15: multiple definition of `to_sig_sw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/main.o: In function `parse_training_data':
+C:\neural_network_fpga\software\neural/main.c:15: multiple definition of `to_isig_hw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/main.o: In function `parse_training_data':
+C:\neural_network_fpga\software\neural/main.c:15: multiple definition of `to_isig_sw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/types.o:(.sdata+0x0): multiple definition of `to_sig_hw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/types.o: In function `init_array':
+C:\neural_network_fpga\software\neural/types.c:4: multiple definition of `to_sig_sw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/types.o: In function `init_array':
+C:\neural_network_fpga\software\neural/types.c:4: multiple definition of `to_isig_hw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+obj/default/types.o: In function `init_array':
+C:\neural_network_fpga\software\neural/types.c:4: multiple definition of `to_isig_sw_port'
+obj/default/formula.o:C:\neural_network_fpga\software\neural/formula.c:3: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [neural.elf] Error 1
+17:00:41 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+17:02:34 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:75:3: error: 'to_hw_sig' undeclared (first use in this function)
+  *to_hw_sig = 1;
+   ^
+main.c:75:3: note: each undeclared identifier is reported only once for each function it appears in
+main.c:108:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:108:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:113:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:113:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:164:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:164:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+make: *** [obj/default/main.o] Error 1
+17:02:35 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+17:03:11 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480977927 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+17:03:13 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+17:03:49 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+17:03:49 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+17:05:27 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+17:06:14 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480977927 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 868 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]

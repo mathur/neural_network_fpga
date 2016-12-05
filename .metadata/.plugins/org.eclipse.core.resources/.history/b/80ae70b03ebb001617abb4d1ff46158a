@@ -1,0 +1,23 @@
+#ifndef CONST_H_
+#define CONST_H_
+
+#define DEBUG						0
+#define ON_FPGA						1
+
+#define INITIAL_ARR_SIZE			100
+#define ATTRS_PER_ENTRY				100
+#define ITER_TO_CHECK				10
+
+#define LAYER_1_NUM_NODES			6
+
+#define	NUM_TRAINING_ITERATIONS		50000
+#define	LEARNING_RATE				0.2
+#define	CONVERGENCE_THRESHOLD		0.01
+
+volatile float *to_sig_hw_port = (float *) 0x00000070;
+volatile float *to_sig_sw_port = (float *) 0x00000090;
+
+volatile float *to_isig_hw_port = (float *) 0x000000c0;
+volatile float *to_isig_sw_port = (float *) 0x000000d0;
+
+#endif // CONST_H_

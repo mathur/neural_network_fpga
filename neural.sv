@@ -1,4 +1,4 @@
-module neural(
+module neural (
 	input  [31:0] x,
 	input	        CLOCK_50,
 	input  [3:0]  KEY,
@@ -17,18 +17,22 @@ module neural(
 	inout  [31:0] DRAM_DQ
 );
 
-    logic [ 31:0] to_sw_port;   // data
+    logic [ 31:0] to_sw_port;
     logic [ 31:0] to_hw_port;
-	// enum logic [6:0] {SEND, RECIEVE} state, next_state;
 
-	spu spu_proc(
-		.x_float(to_hw_port),
-		.y_float(to_sw_port)
+	spu spu_proc (
+		.x_float(to_sig_hw_port),
+		.y_float(to_sig_sw_port)
 	);
-	
-	neural_soc m_neural_soc(
+
+	ispu ispu_proc (
+		.x_float(to_isig_hw_port),
+		.y_float(to_isig_sw_port)
+	);
+
+	neural_soc m_neural_soc (
 		.clk_clk(CLOCK_50),
-		.reset_reset_n(KEY[0]), 
+		.reset_reset_n(KEY[0]),
 		.led_wire_export(LEDG),
 		.sdram_wire_addr(DRAM_ADDR),     //  sdram_wire.addr
 		.sdram_wire_ba(DRAM_BA),      	//  .ba
@@ -41,8 +45,10 @@ module neural(
 		.sdram_wire_we_n(DRAM_WE_N),     //  .we_n
 		.sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
 		.switch_wire_export(SW[7:0]),
-		.to_hw_port_export(to_hw_port),
-		.to_sw_port_export(to_sw_port),
+		.to_sig_hw_port_export(to_sig_hw_port),
+		.to_sig_sw_port_export(to_sig_sw_port),
+		.to_isig_hw_port_export(to_isig_hw_port),
+		.to_isig_sw_port_export(to_isig_sw_port),
 		.key_wire_export(KEY[3:0])
 	);
 

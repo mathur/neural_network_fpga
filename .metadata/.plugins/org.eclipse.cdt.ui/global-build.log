@@ -296,3 +296,264 @@ Info: Building ../neural_bsp/
 C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
 [BSP build complete]
 [neural build complete]
+15:21:13 **** Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480800838 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 869 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+15:21:22 **** Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+15:21:45 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+15:22:35 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:111:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:116:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:167:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480800838 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 869 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+15:22:37 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+15:22:44 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+15:29:15 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:162:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:162:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:167:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:218:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:218:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480800838 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 870 KBytes program size (code + initialized data).
+Info:              130163 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+15:29:17 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+15:29:24 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+15:37:41 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling formula.c to obj/default/formula.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/formula.o formula.c
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:162:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:162:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:167:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:167:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:218:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:218:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Compiling types.c to obj/default/types.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/types.o types.c
+types.c: In function 'print_array':
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Size of array is %d\n", a->used);
+            ^
+types.c:34:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+         printf("%d ", (uint32_t) a->array[i]);
+                ^
+types.c:36:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+In file included from types.h:9:0,
+                 from types.c:1:
+types.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480800838 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 870 KBytes program size (code + initialized data).
+Info:              130163 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+15:37:43 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+15:37:50 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+15:41:31 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../neural_bsp//newlib/nios2-elf/include -I../neural_bsp//HAL/inc -I../neural_bsp/ -I../neural_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o obj/default/main.o main.c
+main.c: In function 'main':
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+     printf("Data has converged at the %dth run\n", total_runs);
+            ^
+main.c:107:12: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Current iteration: %d\n", total_runs);
+           ^
+main.c:112:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+  printf("Incorrectly classified from testing dataset: %d\n", num_incorrect);
+         ^
+main.c:163:9: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+In file included from types.h:9:0,
+                 from main.h:12,
+                 from main.c:1:
+main.c: At top level:
+formula.h:17:13: warning: 'printme' declared 'static' but never defined [-Wunused-function]
+ static void printme(void *c, size_t n);
+             ^
+Info: Linking neural.elf
+nios2-elf-g++  -T'../neural_bsp//linker.x' -msys-crt0='../neural_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../neural_bsp/ -L../neural_bsp//newlib/nios2-elf/lib   -Wl,-Map=neural.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -fno-math-errno  -o neural.elf obj/default/formula.o obj/default/main.o obj/default/types.o -lm -msys-lib=m
+nios2-elf-insert neural.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x48 --timestamp 1480800838 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name neural_soc --quartus_project_dir "C:/neural_network_fpga" --jdi ../..//output_files/neural.jdi --sopcinfo C:/neural_network_fpga/software/neural_bsp/../../neural_soc.sopcinfo
+Info: (neural.elf) 869 KBytes program size (code + initialized data).
+Info:              130164 KBytes free for stack + heap.
+Info: Creating neural.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source neural.elf >neural.objdump
+[neural build complete]
+15:41:36 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]
+15:42:05 **** Incremental Build of configuration Nios II for project neural ****
+make all 
+Info: Building ../neural_bsp/
+C:/altera/16.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../neural_bsp/
+[BSP build complete]
+[neural build complete]
+15:42:05 **** Incremental Build of configuration Nios II for project neural_bsp ****
+make all 
+[BSP build complete]

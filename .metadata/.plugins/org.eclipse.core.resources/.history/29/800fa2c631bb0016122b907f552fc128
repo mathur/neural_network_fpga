@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include <time.h>
+
 // each row has 1 target + 100 attributes
 array_t 	target_vals;
 array_t 	attr_vals;
@@ -12,7 +14,7 @@ uint32_t	curr_point;
 uint32_t 	total_runs;
 uint32_t	num_incorrect;
 
-int parse_data(char * fname) {
+int parse_training_data() {
 	// reset dataset
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
@@ -20,66 +22,104 @@ int parse_data(char * fname) {
 	total_runs 		= 0;
 	num_incorrect 	= 0;
 
-	FILE * fp;
-	char * line = NULL;
-	size_t len = 0;
-	ssize_t read;
-
-	fp = fopen(fname, "r");
-	if (fp == NULL)
-	    return -1;
-
-	while ((read = getline(&line, &len, fp)) != -1) {
-		// trim newline character at the end of the line
-		size_t ln = strlen(line) - 1;
-		if (*line && line[ln] == '\n') {
-		    line[ln] = '\0';
-		}
-
-		uint8_t first_elem = 1;
+	char *line;
+	uint8_t first_elem;
+	for(int i = 0; i < 100; i++) {
+		line = training_data[i];
+		first_elem = 1;
+		if (i % 100 == 0) printf("%d\n", i);
 	    // split by delimiter
-		char *token;
-		while ((token = strsep(&line, ","))) {
-			if(first_elem) {
-				insert_array(&target_vals, atoi(token));
+		for(int j = 0; j < 201; j += 2) {
+			int value = atoi(line + j);
+			if (first_elem) {
+				insert_array(&target_vals, value);
 				first_elem = 0;
 			} else {
-				insert_array(&attr_vals, atoi(token));
+				insert_array(&attr_vals, value);
 			}
 		}
 	}
 
-	fclose(fp);
+	return 0;
+}
 
-	if (line) {
-	    free(line);
+int parse_testing_data() {
+	// reset dataset
+	init_array(&target_vals, INITIAL_ARR_SIZE);
+	init_array(&attr_vals, INITIAL_ARR_SIZE);
+	curr_point 		= 0;
+	total_runs 		= 0;
+	num_incorrect 	= 0;
+
+	char *line;
+	uint8_t first_elem;
+	for(int i = 0; i < 100; i++) {
+		line = testing_data[i];
+		first_elem = 1;
+
+	    // split by delimiter
+		for(int j = 0; j < 201; j += 2) {
+			int value = atoi(line + j);
+			if (first_elem) {
+				insert_array(&target_vals, value);
+				first_elem = 0;
+			} else {
+				insert_array(&attr_vals, value);
+			}
+		}
 	}
 
 	return 0;
 }
 
 int main() {
+    clock_t start, end;
+    double cpu_time_used;
+
 	printf("Initializing neural network...\n");
 	srand48(time(NULL));
+
+    start = clock();
 
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
 
+	end = clock();
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	printf("initialization of arrays: %f\n", cpu_time_used);
+
+    start = clock();
+
 	init_layer_1(&layer_1, &attr_vals, curr_point, LAYER_1_NUM_NODES, 1);
 	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2, LAYER_1_NUM_NODES);
 
+	end = clock();
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	printf("initialization of layers: %f\n", cpu_time_used);
+
+
+    start = clock();
 	printf("Parsing training dataset...\n");
-	if(parse_data("/mnt/host/mushroom-training.txt") == -1) {
+	if(parse_training_data() == -1) {
 		printf("Failed to parse dataset\n");
 		return -1;
 	}
 
+	end = clock();
+	cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+	printf("parsing dataset: %f\n", cpu_time_used);
+
 	printf("Starting training...\n");
 	float total_err = 0;
-	while(1) {
+	while(total_runs < 1000) {
+
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
 		eval_layer_1(&layer_1);
+
+		end = clock();
+		cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+		printf("eval layer 1: %f\n", cpu_time_used);
 
 		// set up the second layer and evaluate it
 		layer_2.curr_point = curr_point;
@@ -96,9 +136,10 @@ int main() {
 				break;
 			}
 			total_err = 0;
+
+			printf("Current iteration: %d\n", total_runs);
+			printf("Current error: %f\n\n", curr_err);
 		}
-		printf("Current iteration: %d\n", total_runs);
-		printf("Current error: %f\n\n", curr_err);
 
 		// move onto the next data entry
 		total_runs++;
@@ -114,8 +155,8 @@ int main() {
 	// clean up arrays from training
 	free_array(&target_vals);
 	free_array(&attr_vals);
-	printf("Parsing training dataset...\n");
-	if(parse_data("/mnt/host/mushroom-testing.txt") == -1) {
+	printf("Parsing testing dataset...\n");
+	if(parse_testing_data() == -1) {
 		printf("Failed to parse dataset\n");
 		return -1;
 	}

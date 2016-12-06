@@ -1,5 +1,4 @@
 module neural (
-	input  [31:0] x,
 	input	        CLOCK_50,
 	input  [3:0]  KEY,
 	input  [7:0]  SW,
@@ -13,14 +12,13 @@ module neural (
 	output		  DRAM_RAS_N,
 	output		  DRAM_WE_N,
 	output		  DRAM_CLK,
-	output [31:0] result,
 	inout  [31:0] DRAM_DQ
 );
 
-	enum logic [2:0] {HALT, RUN} state, next_state;
+	enum logic {HALT, RUN} state, next_state;
 
-	logic  [ 1:0] to_hw_sig;
-	logic  [ 1:0] to_sw_sig;
+	logic  to_hw_sig;
+	logic  to_sw_sig;
 	
    logic [ 31:0] to_sig_sw_port;
    logic [ 31:0] to_sig_hw_port;
@@ -31,7 +29,7 @@ module neural (
 	logic [ 31:0] sig_output;
 	logic [ 31:0] isig_output;
 	
-	assign reset_n = KEY[0];
+	assign reset_n = ~KEY[0];
 
 	spu spu_proc (
 		.x_float(to_sig_hw_port),
@@ -46,7 +44,6 @@ module neural (
 	neural_soc m_neural_soc (
 		.clk_clk(CLOCK_50),
 		.reset_reset_n(KEY[0]),
-		.led_wire_export(LEDG),
 		.sdram_wire_addr(DRAM_ADDR),     //  sdram_wire.addr
 		.sdram_wire_ba(DRAM_BA),      	//  .ba
 		.sdram_wire_cas_n(DRAM_CAS_N),   //  .cas_n
@@ -67,8 +64,8 @@ module neural (
 		.to_sw_sig_export(to_sw_sig)
 	);
 	
-	always @ (posedge CLOCK_50, negedge reset_n) begin
-        if (reset_n == 1'b0) begin
+	always @ (posedge CLOCK_50) begin
+        if (reset_n == 1'b1) begin
             state  <= HALT;
         end else begin
             state <= next_state;
@@ -79,24 +76,28 @@ module neural (
         next_state = state;
         unique case (state)
             HALT: begin
-					if (to_hw_sig == 1)
+					if (to_hw_sig == 1'b1)
 						next_state = RUN;
             end
 				RUN: begin
-					if (to_hw_sig == 0)
+					if (to_hw_sig == 1'b0)
 						next_state = HALT;
 				end
         endcase
     end
 
     always_comb begin
+		  to_sig_sw_port  = sig_output;
+		  to_isig_sw_port = isig_output;
         unique case (state)
             HALT: begin
-					to_sig_sw_port = 0;
-					to_isig_sw_port = 0;
+					LEDG = 5;
+					to_sig_sw_port  = 32'b0;
+					to_isig_sw_port = 32'b0;
             end
 				RUN: begin
-					to_sig_sw_port = sig_output;
+					LEDG = 15;
+					to_sig_sw_port  = sig_output;
 					to_isig_sw_port = isig_output;
 				end
         endcase

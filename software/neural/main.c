@@ -1,7 +1,7 @@
 #include "main.h"
 
-volatile float *to_hw_sig = (float *) 0x00000080;
-volatile float *to_sw_sig = (float *) 0x000000a0;
+volatile uint8_t *to_hw_sig = (uint8_t *) 0x00000080;
+volatile uint8_t *to_sw_sig = (uint8_t *) 0x000000a0;
 
 // each row has 1 target + 100 attributes
 array_t 	target_vals;
@@ -25,10 +25,10 @@ int parse_training_data() {
 
 	char *line;
 	uint8_t first_elem;
-	for(int i = 0; i < 100; i++) {
+	for(int i = 0; i < 7000; i++) {
 		line = training_data[i];
 		first_elem = 1;
-		if (i % 100 == 0) printf("%d\n", i);
+
 	    // split by delimiter
 		for(int j = 0; j < 201; j += 2) {
 			int value = atoi(line + j);
@@ -54,7 +54,7 @@ int parse_testing_data() {
 
 	char *line;
 	uint8_t first_elem;
-	for(int i = 0; i < 100; i++) {
+	for(int i = 0; i < 1000; i++) {
 		line = testing_data[i];
 		first_elem = 1;
 
@@ -92,7 +92,7 @@ int main() {
 
 	printf("Starting training...\n");
 	float total_err = 0;
-	while(total_runs < 1000) {
+	while(1) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
 		eval_layer_1(&layer_1);

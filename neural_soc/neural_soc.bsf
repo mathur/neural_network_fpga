@@ -69,9 +69,9 @@ agreement for further details.
 	(port
 		(pt 0 640)
 		(input)
-		(text "to_sw_sig_export[1..0]" (rect 0 0 89 12)(font "Arial" (font_size 8)))
-		(text "to_sw_sig_export[1..0]" (rect 4 629 136 640)(font "Arial" (font_size 8)))
-		(line (pt 0 640)(pt 160 640)(line_width 3))
+		(text "to_sw_sig_export" (rect 0 0 70 12)(font "Arial" (font_size 8)))
+		(text "to_sw_sig_export" (rect 4 629 100 640)(font "Arial" (font_size 8)))
+		(line (pt 0 640)(pt 160 640)(line_width 1))
 	)
 	(port
 		(pt 0 152)
@@ -146,9 +146,9 @@ agreement for further details.
 	(port
 		(pt 0 440)
 		(output)
-		(text "to_hw_sig_export[1..0]" (rect 0 0 89 12)(font "Arial" (font_size 8)))
-		(text "to_hw_sig_export[1..0]" (rect 4 429 136 440)(font "Arial" (font_size 8)))
-		(line (pt 0 440)(pt 160 440)(line_width 3))
+		(text "to_hw_sig_export" (rect 0 0 70 12)(font "Arial" (font_size 8)))
+		(text "to_hw_sig_export" (rect 4 429 100 440)(font "Arial" (font_size 8)))
+		(line (pt 0 440)(pt 160 440)(line_width 1))
 	)
 	(port
 		(pt 0 480)
@@ -206,7 +206,7 @@ agreement for further details.
 		(text "export" (rect 165 595 366 1200)(font "Arial" (color 0 0 0)))
 		(text "to_sw_sig" (rect 100 611 254 1235)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 165 635 366 1280)(font "Arial" (color 0 0 0)))
-		(text " neural_soc " (rect 334 656 740 1322)(font "Arial" ))
+		(text " system " (rect 349 656 746 1322)(font "Arial" ))
 		(line (pt 160 32)(pt 224 32)(line_width 1))
 		(line (pt 224 32)(pt 224 656)(line_width 1))
 		(line (pt 160 656)(pt 224 656)(line_width 1))

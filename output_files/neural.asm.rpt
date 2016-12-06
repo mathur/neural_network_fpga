@@ -1,5 +1,5 @@
 Assembler report for neural
-Mon Dec 05 16:56:23 2016
+Mon Dec 05 18:51:20 2016
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 05 16:56:23 2016 ;
+; Assembler Status      ; Successful - Mon Dec 05 18:51:20 2016 ;
 ; Revision Name         ; neural                                ;
 ; Top-level Entity Name ; neural                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                 ;
 +----------------+---------------------------------------------------------+
 ; Device         ; EP4CE115F29C7                                           ;
-; JTAG usercode  ; 0x00FA32C1                                              ;
-; Checksum       ; 0x00FA32C1                                              ;
+; JTAG usercode  ; 0x00FAE113                                              ;
+; Checksum       ; 0x00FAE113                                              ;
 +----------------+---------------------------------------------------------+
 
 
@@ -90,14 +90,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Mon Dec 05 16:56:17 2016
+    Info: Processing started: Mon Dec 05 18:51:12 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off neural -c neural
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 683 megabytes
-    Info: Processing ended: Mon Dec 05 16:56:23 2016
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 682 megabytes
+    Info: Processing ended: Mon Dec 05 18:51:20 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

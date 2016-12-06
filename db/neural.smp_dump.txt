@@ -1,9 +1,4 @@
 
-State Machine - |neural|state
-Name state.RUN 
-state.HALT 0 
-state.RUN 1 
-
 State Machine - |neural|neural_soc:m_neural_soc|neural_soc_sdram:sdram|m_next
 Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
 m_next.000000001 0 0 0 0 

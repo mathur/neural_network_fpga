@@ -14,11 +14,11 @@
 		.sdram_wire_ras_n       (<connected-to-sdram_wire_ras_n>),       //                .ras_n
 		.sdram_wire_we_n        (<connected-to-sdram_wire_we_n>),        //                .we_n
 		.switch_wire_export     (<connected-to-switch_wire_export>),     //     switch_wire.export
+		.to_hw_sig_export       (<connected-to-to_hw_sig_export>),       //       to_hw_sig.export
 		.to_isig_hw_port_export (<connected-to-to_isig_hw_port_export>), // to_isig_hw_port.export
 		.to_isig_sw_port_export (<connected-to-to_isig_sw_port_export>), // to_isig_sw_port.export
 		.to_sig_hw_port_export  (<connected-to-to_sig_hw_port_export>),  //  to_sig_hw_port.export
 		.to_sig_sw_port_export  (<connected-to-to_sig_sw_port_export>),  //  to_sig_sw_port.export
-		.to_hw_sig_export       (<connected-to-to_hw_sig_export>),       //       to_hw_sig.export
 		.to_sw_sig_export       (<connected-to-to_sw_sig_export>)        //       to_sw_sig.export
 	);
 

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 5, 2016 4:58:37 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1480978717127</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 5, 2016 6:32:03 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1480984323505</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\neural_network_fpga\software\neural_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\neural_soc.sopcinfo</SopcDesignFile>

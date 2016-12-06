@@ -1,9 +1,8 @@
 #include "main.h"
 
-#include <errno.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+volatile uint8_t *to_hw_sig = (uint8_t *) 0x00000080;
+volatile uint8_t *to_sw_sig = (uint8_t *) 0x000000a0;
+
 // each row has 1 target + 100 attributes
 array_t 	target_vals;
 array_t 	attr_vals;
@@ -16,60 +15,60 @@ uint32_t	curr_point;
 uint32_t 	total_runs;
 uint32_t	num_incorrect;
 
-int parse_data(char * fname) {
+int parse_training_data() {
 	// reset dataset
 	init_array(&target_vals, INITIAL_ARR_SIZE);
 	init_array(&attr_vals, INITIAL_ARR_SIZE);
-
 	curr_point 		= 0;
 	total_runs 		= 0;
 	num_incorrect 	= 0;
 
-	FILE * fp;
-	size_t len = 205;
-	char * line = malloc(sizeof(char) * len);
-	getchar();
-	puts("hello");
-	int fd = open(fname, O_RDONLY);
-	if (fd == -1) {
-		perror("open();");
-	} else {
-		puts("fuck me silly");
-	}
+	char *line;
+	uint8_t first_elem;
+	for(int i = 0; i < 7000; i++) {
+		line = training_data[i];
+		first_elem = 1;
 
-	fp = fopen(fname, "r");
-	puts("world");
-
-	if (fp == NULL)
-	    return -1;
-
-	getchar();
-
-	while (fgets(&line, len, fp) != NULL) {
-		printf("lol");
-		// trim newline character at the end of the line
-		size_t ln = strlen(line) - 1;
-		if (*line && line[ln] == '\n') {
-		    line[ln] = '\0';
-		}
-
-		uint8_t first_elem = 1;
 	    // split by delimiter
-		char *token;
-		while ((token = strsep(&line, ","))) {
-			if(first_elem) {
-				insert_array(&target_vals, atoi(token));
+		for(int j = 0; j < 201; j += 2) {
+			int value = atoi(line + j);
+			if (first_elem) {
+				insert_array(&target_vals, value);
 				first_elem = 0;
 			} else {
-				insert_array(&attr_vals, atoi(token));
+				insert_array(&attr_vals, value);
 			}
 		}
+		if(i % 100 == 0) printf("Parsing entry %d", i);
 	}
 
-	fclose(fp);
+	return 0;
+}
 
-	if (line) {
-	    free(line);
+int parse_testing_data() {
+	// reset dataset
+	init_array(&target_vals, INITIAL_ARR_SIZE);
+	init_array(&attr_vals, INITIAL_ARR_SIZE);
+	curr_point 		= 0;
+	total_runs 		= 0;
+	num_incorrect 	= 0;
+
+	char *line;
+	uint8_t first_elem;
+	for(int i = 0; i < 1000; i++) {
+		line = testing_data[i];
+		first_elem = 1;
+
+	    // split by delimiter
+		for(int j = 0; j < 201; j += 2) {
+			int value = atoi(line + j);
+			if (first_elem) {
+				insert_array(&target_vals, value);
+				first_elem = 0;
+			} else {
+				insert_array(&attr_vals, value);
+			}
+		}
 	}
 
 	return 0;
@@ -77,6 +76,7 @@ int parse_data(char * fname) {
 
 int main() {
 	printf("Initializing neural network...\n");
+	*to_hw_sig = 1;
 	srand48(time(NULL));
 
 	init_array(&target_vals, INITIAL_ARR_SIZE);
@@ -85,11 +85,8 @@ int main() {
 	init_layer_1(&layer_1, &attr_vals, curr_point, LAYER_1_NUM_NODES, 1);
 	init_layer_2(&layer_2, layer_1.layer_out, curr_point, 1, 2, LAYER_1_NUM_NODES);
 
-	getchar();
 	printf("Parsing training dataset...\n");
-	getchar();
-	printf("what");
-	if(parse_data("/mnt/host/mushroom-training.txt") == -1) {
+	if(parse_training_data() == -1) {
 		printf("Failed to parse dataset\n");
 		return -1;
 	}
@@ -116,9 +113,10 @@ int main() {
 				break;
 			}
 			total_err = 0;
+
+			printf("Current iteration: %d\n", total_runs);
+			printf("Current error: %f\n\n", curr_err);
 		}
-		printf("Current iteration: %d\n", total_runs);
-		printf("Current error: %f\n\n", curr_err);
 
 		// move onto the next data entry
 		total_runs++;
@@ -134,8 +132,8 @@ int main() {
 	// clean up arrays from training
 	free_array(&target_vals);
 	free_array(&attr_vals);
-	printf("Parsing training dataset...\n");
-	if(parse_data("/mnt/host/mushroom-testing.txt") == -1) {
+	printf("Parsing testing dataset...\n");
+	if(parse_testing_data() == -1) {
 		printf("Failed to parse dataset\n");
 		return -1;
 	}
@@ -171,6 +169,7 @@ int main() {
 	printf("Accuracy percentage: %0.2f%%\n", (1 - ((float) num_incorrect) / target_vals.used) * 100);
 	getchar();
 
+	*to_hw_sig = 0;
 	free_layer_1(&layer_1);
 	free_layer_2(&layer_2);
 	free_array(&target_vals);

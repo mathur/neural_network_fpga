@@ -39,7 +39,6 @@ int parse_training_data() {
 				insert_array(&attr_vals, value);
 			}
 		}
-		if(i % 100 == 0) printf("Parsing entry %d", i);
 	}
 
 	return 0;

@@ -93,7 +93,7 @@ int main() {
 
 	printf("Starting training...\n");
 	float total_err = 0;
-	while(1) {
+	while(total_runs < 3000) {
 		// set up the first layer and evaluate it
 		layer_1.curr_point = curr_point;
 		eval_layer_1(&layer_1);

@@ -7,7 +7,6 @@ volatile float *to_isig_hw_port = (float *) 0x000000c0;
 volatile float *to_isig_sw_port = (float *) 0x000000d0;
 
 float sigmoid(float x) {
-	// calcualte the taylor series expansion of e^x, and then use it in sigmoid
     if(!ON_FPGA) {
         int sign = x > 0;
         x = fabs(x);
@@ -39,7 +38,6 @@ float inv_sigmoid(float x) {
 }
 
 float err(float o, float t) {
-	// calculate the error of our output vs our target
 	return 0.5 * ((t - o) * (t - o));
 }
 

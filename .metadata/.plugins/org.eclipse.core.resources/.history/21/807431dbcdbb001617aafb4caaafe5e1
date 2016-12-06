@@ -39,7 +39,6 @@ float inv_sigmoid(float x) {
 }
 
 float err(float o, float t) {
-	// calculate the error of our output vs our target
 	return 0.5 * ((t - o) * (t - o));
 }
 

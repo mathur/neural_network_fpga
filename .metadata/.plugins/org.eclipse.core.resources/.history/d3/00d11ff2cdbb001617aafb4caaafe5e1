@@ -44,7 +44,6 @@ void print_float_array(float * arr, uint32_t size) {
     }
 }
 
-// calculate the dot products
 float dot_product_1(array_t * arr1, float * arr2, float size, uint32_t curr_point) {
     float total_sum = 0;
     for(int i = 0; i < size; i++) {
@@ -102,7 +101,6 @@ void eval_layer_1(layer_1_t * l) {
 }
 
 void backprop_layer_1(layer_1_t * l, layer_2_t * other) {
-	// calculate the updated weights using the previous weight, delta, and learning rate
     for(int i = 0; i < l->num_nodes; i++) {
         for(int j = 0; j < ATTRS_PER_ENTRY; j++) {
             l->weights[i][j] = l->weights[i][j] - (LEARNING_RATE * other->weight_deltas[0][i] * get_array_value(l->input_vals, (l->curr_point * ATTRS_PER_ENTRY + j)) * other->weights[0][i] * inv_sigmoid(l->layer_out[i]));
